@@ -24,11 +24,13 @@ public class Main {
         System.out.println("Hello");
        
        ArrayList al = new ArrayList();
-       al.add("Service");
-       al.add("000");
-       al.add("ORG");
-       al.add("C");
-       al.add("123");
+       al.add("malade");
+       al.add("100");
+       al.add("Valjean");
+       al.add("Jean");
+       al.add("18 rue de la pouppe qui tousse");
+       al.add("01 30 32 32 32");
+       al.add("MMa");
        Maj rq = new Maj();
        rq.ajouterObjet(al);
        

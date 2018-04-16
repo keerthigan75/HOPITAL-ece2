@@ -33,7 +33,7 @@ public class Maj {
                 type[i-1] = (String) list.get(i);
              }
             //On ecrit ensuite la requete
-             requete = "INSERT INTO service (code, nom, batiment, directeur) VALUES (" + type[0] + ", '" + type[1] + "', '" + type[2] + "', " + type[3] + ");";
+             requete = "INSERT INTO service (code, nom, batiment, directeur) VALUES ('" + type[0] + "', '" + type[1] + "', '" + type[2] + "', " + type[3] + ");";
              connectLocal.executeUpdate(requete);   // puis on l'execute   
         }
         else if (list.get(0) == "chambre") { //De la meme facon avec Chambre
@@ -82,7 +82,7 @@ public class Maj {
             for (int i =1; i<7; i++) {
                 type[i-1] = (String) list.get(i);
              }
-             requete = "INSERT INTO malade (numero, nom, prenom, adresse, tel, mutuelle) VALUES (" + type[0] + ", '" + type[1] + "', '" + type[2] + "', '" + type[3] + "' +" + type[4] + ", '" + type[5] + "');";
+             requete = "INSERT INTO malade (numero, nom, prenom, adresse, tel, mutuelle) VALUES (" + type[0] + ", '" + type[1] + "', '" + type[2] + "', '" + type[3] + "' ,'" + type[4] + "', '" + type[5] + "');";
              connectLocal.executeUpdate(requete);
         }
         else if (list.get(0) == "soigne") { //soigne
@@ -102,8 +102,9 @@ public class Maj {
                 type[i-1] = (String) list.get(i);
              }
             //On ecrit ensuite la requete
-             requete = "DELETE FROM service WHERE code=" + type[0] + ";";
-             connectLocal.executeUpdate(requete);   // puis on l'execute   
+             requete = "DELETE FROM service WHERE service.code ='" + type[0] + "';";
+             System.out.print(requete);
+             connectLocal.executeUpdate(requete);   // puis on l'execute  
         }
         else if (list.get(0) == "chambre") { // Pour la table Chambre
             type = new String[2]; //On definit la taille du tableau de String
@@ -111,7 +112,7 @@ public class Maj {
                 type[i-1] = (String) list.get(i);
              }
             //On ecrit ensuite la requete
-             requete = "DELETE FROM service WHERE no_chambre=" + type[0] + " AND code_service=" + type[1] + ";";
+             requete = "DELETE FROM chambre WHERE chambre.no_chambre='" + type[0] + "' AND chambre.code_service='" + type[1] + "';";
              connectLocal.executeUpdate(requete);   // puis on l'execute   
         }
         else if (list.get(0) == "docteur") { // Pour la table Docteur
@@ -120,7 +121,7 @@ public class Maj {
                 type[i-1] = (String) list.get(i);
              }
             //On ecrit ensuite la requete
-             requete = "DELETE FROM service WHERE numero=" + type[0] + ";";
+             requete = "DELETE FROM docteur WHERE docteur.numero='" + type[0] + "';";
              connectLocal.executeUpdate(requete);   // puis on l'execute   
         }
         else if (list.get(0) == "employe") { // Pour la table Employe
@@ -129,7 +130,7 @@ public class Maj {
                 type[i-1] = (String) list.get(i);
              }
             //On ecrit ensuite la requete
-             requete = "DELETE FROM service WHERE numero=" + type[0] + ";";
+             requete = "DELETE FROM employe WHERE employe.numero='" + type[0] + "';";
              connectLocal.executeUpdate(requete);   // puis on l'execute   
         }
         else if (list.get(0) == "hospitalisation") { // Pour la table Hospitalisation
@@ -138,7 +139,7 @@ public class Maj {
                 type[i-1] = (String) list.get(i);
              }
             //On ecrit ensuite la requete
-             requete = "DELETE FROM service WHERE no_malade=" + type[0] + ";";
+             requete = "DELETE FROM hospitalisation WHERE hospitalisation.no_malade='" + type[0] + "';";
              connectLocal.executeUpdate(requete);   // puis on l'execute   
         }
         else if (list.get(0) == "infirmier") { // Pour la table Infirmier
@@ -147,7 +148,7 @@ public class Maj {
                 type[i-1] = (String) list.get(i);
              }
             //On ecrit ensuite la requete
-             requete = "DELETE FROM service WHERE numero=" + type[0] + ";";
+             requete = "DELETE FROM infirmier WHERE infirmier.numero='" + type[0] + "';";
              connectLocal.executeUpdate(requete);   // puis on l'execute   
         }
         else if (list.get(0) == "malade") { // Pour la table Malade
@@ -156,7 +157,7 @@ public class Maj {
                 type[i-1] = (String) list.get(i);
              }
             //On ecrit ensuite la requete
-             requete = "DELETE FROM service WHERE numero=" + type[0] + ";";
+             requete = "DELETE FROM malade WHERE malade.numero='" + type[0] + "';";
              connectLocal.executeUpdate(requete);   // puis on l'execute   
         }
         else if (list.get(0) == "soigne") { //soigne
@@ -164,7 +165,7 @@ public class Maj {
             for (int i =1; i<3; i++) {
                 type[i-1] = (String) list.get(i);
              }
-             requete = "DELETE FROM soigne WHERE no_docteur=" + type[0] + "AND no_malade=" + type[1] + ";";
+             requete = "DELETE FROM soigne WHERE soigne.no_docteur='" + type[0] + "' AND soigne.no_malade='" + type[1] + "';";
              connectLocal.executeUpdate(requete);
         }
     }    
