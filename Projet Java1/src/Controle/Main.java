@@ -19,16 +19,16 @@ public class Main {
      * @throws java.lang.ClassNotFoundException
      * @throws java.sql.SQLException
      */
-    public static void main(String[] args) throws ClassNotFoundException, SQLException {
+    public static void main(String[] args) throws SQLException, ClassNotFoundException {
         
         System.out.println("Hello");
-       Connexion connectLocal = new Connexion("hopital", "root", "");
+       
        ArrayList al = new ArrayList();
        al.add("Service");
        al.add("000");
        al.add("ORG");
        al.add("C");
-       al.add("123123");
+       al.add("123");
        Maj rq = new Maj();
        rq.ajouterObjet(al);
        
