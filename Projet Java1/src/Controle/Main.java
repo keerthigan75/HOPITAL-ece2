@@ -5,6 +5,7 @@
  */
 package Controle;
 
+import Modele.Recherche;
 import Modele.Reporting;
 import java.sql.SQLException;
 /**
@@ -20,25 +21,9 @@ public class Main {
      */
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
         
-//       ArrayList al = new ArrayList();
-//       al.add("malade");
-//       al.add("1");
-//       al.add("prenom");
-//       al.add("Samuel");
-//       al.add("");
-//       al.add("");
-//       al.add("");
-//       al.add("");
-//       Maj rq = new Maj();
-//       rq.modifierObjet(al);
-
-        Reporting oui = new Reporting();
-        oui.infirmier_service(1);
+        Recherche oui = new Recherche();
+        oui.requete9();
        
-       //System.out.print(connectLocal.remplirChampsRequete("SELECT * FROM service"));
-           // On peut maintenant faire des requetes avec l'objet connectLocal
-        //Connexion connectExt = new Connexion("ac151888", "********", "ac151888-rw", "bddECE75015");
-        // La connexion en ligne ne fonctionne pas en marchant par Gandalf.ece.fr
     }
     
 }
