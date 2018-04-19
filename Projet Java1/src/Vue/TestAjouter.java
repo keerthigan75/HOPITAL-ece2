@@ -5,6 +5,8 @@
  */
 package Vue;
 
+import Modele.Maj;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -14,12 +16,14 @@ import java.util.logging.Logger;
  * @author Thomas
  */
 public class TestAjouter extends javax.swing.JFrame {
-    ArrayList<String> requete = new ArrayList<String>();
+    private ArrayList<String> requete = new ArrayList<String>();
+    private Maj miseajour;
 
     /**
      * Creates new form NewJFrame1
      */
-    public TestAjouter(String testt) {
+    public TestAjouter(String testt) throws SQLException, ClassNotFoundException {
+        miseajour = new Maj();
         requete.add(testt);
         switch(testt){
             case "Chambre":
@@ -105,6 +109,8 @@ public class TestAjouter extends javax.swing.JFrame {
                 try {
                     jButton2ActionPerformed(evt);
                 } catch (InterruptedException ex) {
+                    Logger.getLogger(TestAjouter.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (SQLException ex) {
                     Logger.getLogger(TestAjouter.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
@@ -307,6 +313,8 @@ public class TestAjouter extends javax.swing.JFrame {
                     jButton4ActionPerformed(evt);
                 } catch (InterruptedException ex) {
                     Logger.getLogger(TestAjouter.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (SQLException ex) {
+                    Logger.getLogger(TestAjouter.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         });
@@ -471,6 +479,8 @@ public class TestAjouter extends javax.swing.JFrame {
                     jButton6ActionPerformed(evt);
                 } catch (InterruptedException ex) {
                     Logger.getLogger(TestAjouter.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (SQLException ex) {
+                    Logger.getLogger(TestAjouter.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         });
@@ -613,6 +623,8 @@ public class TestAjouter extends javax.swing.JFrame {
                 try {
                     jButton8ActionPerformed(evt);
                 } catch (InterruptedException ex) {
+                    Logger.getLogger(TestAjouter.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (SQLException ex) {
                     Logger.getLogger(TestAjouter.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
@@ -776,6 +788,8 @@ public class TestAjouter extends javax.swing.JFrame {
                 try {
                     jButton9ActionPerformed(evt);
                 } catch (InterruptedException ex) {
+                    Logger.getLogger(TestAjouter.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (SQLException ex) {
                     Logger.getLogger(TestAjouter.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
@@ -941,6 +955,8 @@ public class TestAjouter extends javax.swing.JFrame {
                 try {
                     jButton11ActionPerformed(evt);
                 } catch (InterruptedException ex) {
+                    Logger.getLogger(TestAjouter.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (SQLException ex) {
                     Logger.getLogger(TestAjouter.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
@@ -1112,6 +1128,8 @@ public class TestAjouter extends javax.swing.JFrame {
                     jButton13ActionPerformed(evt);
                 } catch (InterruptedException ex) {
                     Logger.getLogger(TestAjouter.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (SQLException ex) {
+                    Logger.getLogger(TestAjouter.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         });
@@ -1246,6 +1264,8 @@ public class TestAjouter extends javax.swing.JFrame {
                 try {
                     jButton15ActionPerformed(evt);
                 } catch (InterruptedException ex) {
+                    Logger.getLogger(TestAjouter.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (SQLException ex) {
                     Logger.getLogger(TestAjouter.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
@@ -1456,7 +1476,7 @@ public class TestAjouter extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.dispose();
     }                                        
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) throws InterruptedException{                                         
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) throws InterruptedException, SQLException{                                         
         // TODO add your handling code here:
         requete.add(jTextField1.getText());
         requete.add(jTextField2.getText());
@@ -1467,75 +1487,52 @@ public class TestAjouter extends javax.swing.JFrame {
         requete.add(jTextField7.getText());
         requete.add(jTextField8.getText());
         //envoyer requete
-        
+        miseajour.ajouterObjet(requete);
         this.dispose();
         
     }
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) throws InterruptedException {                                         
         // TODO add your handling code here:
         
-        
-        /*String envoiee="";
-        envoiee = " '" + jTextField2.getText() + "',";
-        requete.add(envoiee);
-        envoiee = " '" + jTextField3.getText() + "',";
-        requete.add(envoiee);
-        envoiee = " '" + jTextField4.getText() + "',";
-        requete.add(envoiee);
-        envoiee = " '" + jTextField5.getText() + "',";
-        requete.add(envoiee);
-        envoiee = " '" + jTextField6.getText() + "',";
-        requete.add(envoiee);
-        envoiee = " '" + jTextField8.getText() + "',";
-        requete.add(envoiee);
-        envoiee = " '" + jTextField7.getText() + "',";
-        requete.add(envoiee);
-        envoiee = " '" + jTextField9.getText() + "',";
-        requete.add(envoiee);
-        //ici on envoie la variable envoiee qui contient l'arraylist pour la requete mysql
-        //Thread.sleep(1000);*/
         this.dispose();
 
     }    
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) throws InterruptedException{                                         
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) throws InterruptedException, SQLException{                                         
         // TODO add your handling code here:
         requete.add(jTextField9.getText());
         requete.add(jTextField10.getText());
         requete.add(jTextField11.getText());
         requete.add(jTextField12.getText());
-        for(int i=0;i<requete.size();i++)
-        {
-            System.out.println(requete.get(i));
-        }
+        miseajour.ajouterObjet(requete);
         this.dispose();
     }
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) throws InterruptedException{                                         
         // TODO add your handling code here:
         this.dispose();
     }
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) throws InterruptedException{                                         
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) throws InterruptedException, SQLException{                                         
         // TODO add your handling code here:
         requete.add(jTextField13.getText());
         requete.add(jTextField14.getText());
         requete.add(jTextField15.getText());
         requete.add(jTextField16.getText());
-        
+        miseajour.ajouterObjet(requete);
         this.dispose();
     }                                        
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) throws InterruptedException{                                         
         // TODO add your handling code here:
         this.dispose();
     }
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) throws InterruptedException{                                         
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) throws InterruptedException, SQLException{                                         
         // TODO add your handling code here:
         requete.add(jTextField36.getText());
         requete.add(jTextField37.getText());
         requete.add(jTextField38.getText());
         requete.add(jTextField39.getText());
-        
+        miseajour.ajouterObjet(requete);
         this.dispose();
     }                                        
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) throws InterruptedException{                                         
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) throws InterruptedException, SQLException{                                         
         // TODO add your handling code here:
         requete.add(jTextField17.getText());
         requete.add(jTextField18.getText());
@@ -1543,28 +1540,28 @@ public class TestAjouter extends javax.swing.JFrame {
         requete.add(jTextField20.getText());
         requete.add(jTextField21.getText());
         requete.add(jTextField22.getText());
-        
+        miseajour.ajouterObjet(requete);
         this.dispose();
     }
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) throws InterruptedException{                                         
         // TODO add your handling code here:
         this.dispose();
     }
-    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) throws InterruptedException {                                         
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) throws InterruptedException, SQLException {                                         
         // TODO add your handling code here:
         requete.add(jTextField23.getText());
         requete.add(jTextField24.getText());
         requete.add(jTextField25.getText());
         requete.add(jTextField26.getText());
         requete.add(jTextField27.getText());
-        
+        miseajour.ajouterObjet(requete);
         this.dispose();
     }
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) throws InterruptedException {                                         
         // TODO add your handling code here:
         this.dispose();
     }
-    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) throws InterruptedException {                                         
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) throws InterruptedException, SQLException {                                         
         // TODO add your handling code here:
         requete.add(jTextField28.getText());
         requete.add(jTextField29.getText());
@@ -1572,18 +1569,18 @@ public class TestAjouter extends javax.swing.JFrame {
         requete.add(jTextField31.getText());
         requete.add(jTextField32.getText());
         requete.add(jTextField33.getText());
-        
+        miseajour.ajouterObjet(requete);
         this.dispose();
     }
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) throws InterruptedException {                                         
         // TODO add your handling code here:
         this.dispose();
     }                                        
-    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) throws InterruptedException {                                         
+    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) throws InterruptedException, SQLException {                                         
         // TODO add your handling code here:
         requete.add(jTextField34.getText());
         requete.add(jTextField35.getText());
-        
+        miseajour.ajouterObjet(requete);
         this.dispose();
     }
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) throws InterruptedException {                                         
