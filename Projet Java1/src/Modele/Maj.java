@@ -5,9 +5,10 @@
  */
 
 
-package Controle;
+package Modele;
 
 
+import Controle.Connexion;
 import java.sql.SQLException;
 import java.util.*;
 

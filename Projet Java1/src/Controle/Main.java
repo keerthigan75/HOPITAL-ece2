@@ -5,9 +5,8 @@
  */
 package Controle;
 
+import Modele.Reporting;
 import java.sql.SQLException;
-import java.util.ArrayList;
-
 /**
  *
  * @author Aurélien Coudert & Thomas Couraud & Keert
@@ -21,19 +20,20 @@ public class Main {
      */
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
         
-       ArrayList al = new ArrayList();
-       al.add("malade");
-       al.add("1");
-       al.add("prenom");
-       al.add("Samuel");
-       al.add("");
-       al.add("");
-       al.add("");
-       al.add("");
-//       al.add("01 30 32 32 32");
-//       al.add("MMa");
-       Maj rq = new Maj();
-       rq.modifierObjet(al);
+//       ArrayList al = new ArrayList();
+//       al.add("malade");
+//       al.add("1");
+//       al.add("prenom");
+//       al.add("Samuel");
+//       al.add("");
+//       al.add("");
+//       al.add("");
+//       al.add("");
+//       Maj rq = new Maj();
+//       rq.modifierObjet(al);
+
+        Reporting oui = new Reporting();
+        oui.infirmier_service(1);
        
        //System.out.print(connectLocal.remplirChampsRequete("SELECT * FROM service"));
            // On peut maintenant faire des requetes avec l'objet connectLocal
