@@ -7,6 +7,7 @@ package Controle;
 
 import Modele.Recherche;
 import Modele.Reporting;
+import Vue.NewJFrame;
 import java.sql.SQLException;
 /**
  *
@@ -21,9 +22,9 @@ public class Main {
      */
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
         
-        Recherche oui = new Recherche();
-        oui.requete9();
-       
+        NewJFrame oui = new NewJFrame();
+        
+        oui.setVisible(true);
     }
     
 }

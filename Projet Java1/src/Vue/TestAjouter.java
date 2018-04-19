@@ -1540,6 +1540,7 @@ public class TestAjouter extends javax.swing.JFrame {
         requete.add(jTextField20.getText());
         requete.add(jTextField21.getText());
         requete.add(jTextField22.getText());
+        System.out.println(requete);
         miseajour.ajouterObjet(requete);
         this.dispose();
     }

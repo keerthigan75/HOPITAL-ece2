@@ -28,7 +28,7 @@ public class Maj {
     
     //Methode pour ajouter une nouvelle ligne dans la table correspondante
     public void ajouterObjet(ArrayList list) throws SQLException {
-        if (list.get(0) == "service") { // Pour la table Service
+        if (list.get(0) == "Service") { // Pour la table Service
             type = new String[4]; //On definit la taille du tableau de String
             for (int i =1; i<5; i++) { // On convertit tout les elements de l'array en string
                 type[i-1] = (String) list.get(i);
@@ -37,7 +37,7 @@ public class Maj {
              requete = "INSERT INTO service (code, nom, batiment, directeur) VALUES ('" + type[0] + "', '" + type[1] + "', '" + type[2] + "', " + type[3] + ");";
              connectLocal.executeUpdate(requete);   // puis on l'execute   
         }
-        else if (list.get(0) == "chambre") { //De la meme facon avec Chambre
+        else if (list.get(0) == "Chambre") { //De la meme facon avec Chambre
             type = new String[4];
             for (int i =1; i<5; i++) {
                 type[i-1] = (String) list.get(i);
@@ -46,7 +46,7 @@ public class Maj {
              connectLocal.executeUpdate(requete);
             
         }
-        else if (list.get(0) == "employe") { //De meme pour employe
+        else if (list.get(0) == "Employe") { //De meme pour employe
             type = new String[5];
             for (int i =1; i<6; i++) {
                 type[i-1] = (String) list.get(i);
@@ -54,7 +54,7 @@ public class Maj {
              requete = "INSERT INTO employe (numero, nom, prenom, adresse, tel) VALUES (" + type[0] + ", '" + type[1] + "', '" + type[2] + "', '" + type[3] + "', " + type[4] + ");";
              connectLocal.executeUpdate(requete);
         }
-        else if (list.get(0) == "docteur") { //De meme pour docteur
+        else if (list.get(0) == "Docteur") { //De meme pour docteur
             type = new String[2];
             for (int i =1; i<3; i++) {
                 type[i-1] = (String) list.get(i);
@@ -62,7 +62,7 @@ public class Maj {
              requete = "INSERT INTO docteur (numero, specialite) VALUES (" + type[0] + ", '" + type[1] + "');";
              connectLocal.executeUpdate(requete);
         }
-        else if (list.get(0) == "hospitalisation") { //De meme pour hospitalisation
+        else if (list.get(0) == "Hospitalisation") { //De meme pour hospitalisation
             type = new String[4];
             for (int i =1; i<5; i++) {
                 type[i-1] = (String) list.get(i);
@@ -70,7 +70,7 @@ public class Maj {
              requete = "INSERT INTO hospitalisation (no_malade, code_service, no_chambre, lit) VALUES (" + type[0] + ", '" + type[1] + "', " + type[2] + ", " + type[3] + ", " + type[4] + ");";
              connectLocal.executeUpdate(requete);
         }
-        else if (list.get(0) == "infirmier") { //Infirmier
+        else if (list.get(0) == "Infirmier") { //Infirmier
             type = new String[4];
             for (int i =1; i<5; i++) {
                 type[i-1] = (String) list.get(i);
@@ -78,7 +78,7 @@ public class Maj {
              requete = "INSERT INTO infirmier (numero, code_service, rotation, salaire) VALUES (" + type[0] + ", '" + type[1] + "', '" + type[2] + "', " + type[3] + ");";
              connectLocal.executeUpdate(requete);
         }
-        else if (list.get(0) == "malade") { //Malade
+        else if (list.get(0) == "Malade") { //Malade
             type = new String[6];
             for (int i =1; i<7; i++) {
                 type[i-1] = (String) list.get(i);
@@ -87,7 +87,7 @@ public class Maj {
              System.out.println(requete);
              connectLocal.executeUpdate(requete);
         }
-        else if (list.get(0) == "soigne") { //soigne
+        else if (list.get(0) == "Soigne") { //soigne
             type = new String[2];
             for (int i =1; i<3; i++) {
                 type[i-1] = (String) list.get(i);

@@ -5,6 +5,9 @@
  */
 package Vue;
 
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JComboBox;
 /**
@@ -232,7 +235,14 @@ public class NewJFrame extends javax.swing.JFrame {
                 System.out.println("bonjour1");
                 envoie = testee; 
                 System.out.println(envoie);
-                TestAjouter ajout = new TestAjouter(envoie);
+                TestAjouter ajout = null;
+                try {
+                    ajout = new TestAjouter(envoie);
+                } catch (SQLException ex) {
+                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 ajout.setVisible(true);
                 
                 //System.out.println("bonjour1");
@@ -256,7 +266,14 @@ public class NewJFrame extends javax.swing.JFrame {
                 System.out.println("bonjour1");
                 envoie = testee; 
                 System.out.println(envoie);
-                TestAjouter ajout = new TestAjouter(envoie);
+                TestAjouter ajout = null;
+                try {
+                    ajout = new TestAjouter(envoie);
+                } catch (SQLException ex) {
+                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 ajout.setVisible(true);
                 
                 //System.out.println("bonjour1");
@@ -281,7 +298,14 @@ public class NewJFrame extends javax.swing.JFrame {
                 System.out.println("bonjour1");
                 envoie = testee; 
                 System.out.println(envoie);
-                TestAjouter ajout = new TestAjouter(envoie);
+                TestAjouter ajout = null;
+                try {
+                    ajout = new TestAjouter(envoie);
+                } catch (SQLException ex) {
+                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 ajout.setVisible(true);
                 
                 //System.out.println("bonjour1");
@@ -305,7 +329,14 @@ public class NewJFrame extends javax.swing.JFrame {
                 System.out.println("bonjour1");
                 envoie = testee; 
                 System.out.println(envoie);
-                TestAjouter ajout = new TestAjouter(envoie);
+                TestAjouter ajout = null;
+                try {
+                    ajout = new TestAjouter(envoie);
+                } catch (SQLException ex) {
+                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 ajout.setVisible(true);
                 
                 //System.out.println("bonjour1");
@@ -329,7 +360,14 @@ public class NewJFrame extends javax.swing.JFrame {
                 System.out.println("bonjour1");
                 envoie = testee; 
                 System.out.println(envoie);
-                TestAjouter ajout = new TestAjouter(envoie);
+                TestAjouter ajout = null;
+                try {
+                    ajout = new TestAjouter(envoie);
+                } catch (SQLException ex) {
+                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 ajout.setVisible(true);
                 
                 //System.out.println("bonjour1");
@@ -353,7 +391,14 @@ public class NewJFrame extends javax.swing.JFrame {
                 System.out.println("bonjour1");
                 envoie = testee; 
                 System.out.println(envoie);
-                TestAjouter ajout = new TestAjouter(envoie);
+                TestAjouter ajout = null;
+                try {
+                    ajout = new TestAjouter(envoie);
+                } catch (SQLException ex) {
+                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 ajout.setVisible(true);
                 
                 //System.out.println("bonjour1");
@@ -377,7 +422,14 @@ public class NewJFrame extends javax.swing.JFrame {
                 System.out.println("bonjour1");
                 envoie = testee; 
                 System.out.println(envoie);
-                TestAjouter ajout = new TestAjouter(envoie);
+                TestAjouter ajout = null;
+                try {
+                    ajout = new TestAjouter(envoie);
+                } catch (SQLException ex) {
+                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 ajout.setVisible(true);
                 
                 //System.out.println("bonjour1");
@@ -401,7 +453,14 @@ public class NewJFrame extends javax.swing.JFrame {
                 System.out.println("bonjour1");
                 envoie = testee; 
                 System.out.println(envoie);
-                TestAjouter ajout = new TestAjouter(envoie);
+                TestAjouter ajout = null;
+                try {
+                    ajout = new TestAjouter(envoie);
+                } catch (SQLException ex) {
+                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 ajout.setVisible(true);
                 
                 //System.out.println("bonjour1");
