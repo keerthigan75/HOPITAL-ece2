@@ -54,6 +54,11 @@ public class SignIn extends javax.swing.JFrame {
         button1.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         button1.setForeground(new java.awt.Color(255, 255, 255));
         button1.setLabel("To know more about it ...");
+        button1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button1ActionPerformed(evt);
+            }
+        });
 
         jPanel2.setBackground(new java.awt.Color(0, 102, 102));
 
@@ -211,7 +216,14 @@ public class SignIn extends javax.swing.JFrame {
         String password=sc.nextLine();
         
     }//GEN-LAST:event_jTextField2ActionPerformed
-private void button2ActionPerformed(java.awt.event.ActionEvent evt) {                                        
+
+    private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
+        // TODO add your handling code here:
+        /// TO KNOW MORE ABOUT IT...
+    }//GEN-LAST:event_button1ActionPerformed
+private void button2ActionPerformed(java.awt.event.ActionEvent evt) {   
+    
+        /// CONNECT EN LOCAL
         Menu fen = new Menu();
         this.dispose();
     }                                       
@@ -219,7 +231,9 @@ private void button2ActionPerformed(java.awt.event.ActionEvent evt) {
     private void button3ActionPerformed(java.awt.event.ActionEvent evt) {                                        
         // TODO add your handling code here:
         
-        String password;
+        /// CONNECT EN ONLINE A VOIR AVEC USERNAME PASSWORD
+        
+       
         
         Menu fen = new Menu();
         this.dispose();
