@@ -87,7 +87,7 @@ public class MReporting extends javax.swing.JFrame {
                     .addContainerGap(245, Short.MAX_VALUE)))
         );
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NOMBRE D'HOSPITALISATION PAR SERVICE", "NOMBRE DE DOCTEURS", "NOMBRE INFIRMIERS", "NOMBRE DE MALADES", "NOMBRE DE DOCTEURS PAR SPECIALITE", "NOMBRE D'INFIRMIERS PAR SERVICE" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NOMBRE D'HOSPITALISATION PAR SERVICE", "NOMBRE DE DOCTEURS, INFIRMIERS et MALADES", "NOMBRE DE DOCTEURS PAR SPECIALITE", "NOMBRE D'INFIRMIERS PAR SERVICE" }));
 
         button1.setBackground(new java.awt.Color(204, 51, 0));
         button1.setFont(new java.awt.Font("Calibri Light", 0, 14)); // NOI18N
@@ -241,13 +241,7 @@ private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {
       if(s.toString().equals("NOMBRE D'HOSPITALISATION PAR SERVICE")){
           // RETOURNER ICI UN INT/ OU AUTRE A VOIR
       }
-      if(s.toString().equals("NOMBRE DE DOCTEURS")){
-          // RETOURNER ICI UN INT/ OU AUTRE A VOIR
-      }
-      if(s.toString().equals("NOMBRE INFIRMIERS")){
-          // RETOURNER ICI UN INT/ OU AUTRE A VOIR
-      }
-      if(s.toString().equals("NOMBRE DE MALADES")){
+      if(s.toString().equals("NOMBRE DE DOCTEURS, INFIRMIERS et MALADES")){
           // RETOURNER ICI UN INT/ OU AUTRE A VOIR
       }
       if(s.toString().equals("NOMBRE DE DOCTEURS PAR SPECIALITE")){
