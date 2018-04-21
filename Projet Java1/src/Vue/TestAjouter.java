@@ -1478,11 +1478,17 @@ public class TestAjouter extends javax.swing.JFrame {
     }                                        
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) throws InterruptedException, SQLException{                                         
         // TODO add your handling code here:
+        
+        requete.clear();
+        requete.add("Employe");
         requete.add(jTextField1.getText());
         requete.add(jTextField2.getText());
         requete.add(jTextField3.getText());
         requete.add(jTextField4.getText());
         requete.add(jTextField5.getText());
+        miseajour.ajouterObjet(requete);
+        requete.clear();
+        requete.add("Infirmier");
         requete.add(jTextField6.getText());
         requete.add(jTextField7.getText());
         requete.add(jTextField8.getText());
@@ -1534,11 +1540,16 @@ public class TestAjouter extends javax.swing.JFrame {
     }                                        
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) throws InterruptedException, SQLException{                                         
         // TODO add your handling code here:
+        requete.clear();
+        requete.add("Employe");
         requete.add(jTextField17.getText());
         requete.add(jTextField18.getText());
         requete.add(jTextField19.getText());
         requete.add(jTextField20.getText());
         requete.add(jTextField21.getText());
+        miseajour.ajouterObjet(requete);
+        requete.clear();
+        requete.add("Docteur");
         requete.add(jTextField22.getText());
         System.out.println(requete);
         miseajour.ajouterObjet(requete);
