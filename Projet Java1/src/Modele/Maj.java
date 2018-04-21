@@ -114,7 +114,7 @@ public class Maj {
                 type[i-1] = (String) list.get(i);
              }
             //On ecrit ensuite la requete
-             requete = "DELETE FROM chambre WHERE chambre.no_chambre='" + type[0] + "' AND chambre.code_service='" + type[1] + "';";
+             requete = "DELETE FROM chambre WHERE chambre.code_service='" + type[0] + "' AND chambre.no_chambre='" + type[1] + "';";
              connectLocal.executeUpdate(requete);   // puis on l'execute   
         }
         else if (list.get(0) == "Docteur") { // Pour la table Docteur
@@ -207,7 +207,7 @@ public class Maj {
             }
             //On ecrit ensuite la requete
             requete = requete.substring(0, requete.length() - 1);
-            requete += "WHERE chambre.no_chambre='" + type[1] + "' AND chambre.code_service='" + type[2] + "';";
+            requete += "WHERE chambre.code_service='" + type[1] + "' AND chambre.no_chambre='" + type[2] + "';";
              System.out.print(requete);
              connectLocal.executeUpdate(requete);   // puis on l'execute  
         }
