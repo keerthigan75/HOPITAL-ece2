@@ -98,7 +98,7 @@ public class Maj {
     }
     
     public void supprimerObjet(ArrayList list) throws SQLException {
-       if (list.get(0) == "service") { // Pour la table Service
+       if (list.get(0) == "Service") { // Pour la table Service
             type = new String[1]; //On definit la taille du tableau de String
             for (int i =1; i<2; i++) { // On convertit tout les elements de l'array en string
                 type[i-1] = (String) list.get(i);
@@ -108,7 +108,7 @@ public class Maj {
              System.out.print(requete);
              connectLocal.executeUpdate(requete);   // puis on l'execute  
         }
-        else if (list.get(0) == "chambre") { // Pour la table Chambre
+        else if (list.get(0) == "Chambre") { // Pour la table Chambre
             type = new String[2]; //On definit la taille du tableau de String
             for (int i =1; i<3; i++) { // On convertit tout les elements de l'array en string
                 type[i-1] = (String) list.get(i);
@@ -117,7 +117,7 @@ public class Maj {
              requete = "DELETE FROM chambre WHERE chambre.no_chambre='" + type[0] + "' AND chambre.code_service='" + type[1] + "';";
              connectLocal.executeUpdate(requete);   // puis on l'execute   
         }
-        else if (list.get(0) == "docteur") { // Pour la table Docteur
+        else if (list.get(0) == "Docteur") { // Pour la table Docteur
             type = new String[1]; //On definit la taille du tableau de String
             for (int i =1; i<2; i++) { // On convertit tout les elements de l'array en string
                 type[i-1] = (String) list.get(i);
@@ -126,7 +126,7 @@ public class Maj {
              requete = "DELETE FROM docteur WHERE docteur.numero='" + type[0] + "';";
              connectLocal.executeUpdate(requete);   // puis on l'execute   
         }
-        else if (list.get(0) == "employe") { // Pour la table Employe
+        else if (list.get(0) == "Employe") { // Pour la table Employe
             type = new String[1]; //On definit la taille du tableau de String
             for (int i =1; i<2; i++) { // On convertit tout les elements de l'array en string
                 type[i-1] = (String) list.get(i);
@@ -135,7 +135,7 @@ public class Maj {
              requete = "DELETE FROM employe WHERE employe.numero='" + type[0] + "';";
              connectLocal.executeUpdate(requete);   // puis on l'execute   
         }
-        else if (list.get(0) == "hospitalisation") { // Pour la table Hospitalisation
+        else if (list.get(0) == "Hospitalisation") { // Pour la table Hospitalisation
             type = new String[1]; //On definit la taille du tableau de String
             for (int i =1; i<2; i++) { // On convertit tout les elements de l'array en string
                 type[i-1] = (String) list.get(i);
@@ -144,7 +144,7 @@ public class Maj {
              requete = "DELETE FROM hospitalisation WHERE hospitalisation.no_malade='" + type[0] + "';";
              connectLocal.executeUpdate(requete);   // puis on l'execute   
         }
-        else if (list.get(0) == "infirmier") { // Pour la table Infirmier
+        else if (list.get(0) == "Infirmier") { // Pour la table Infirmier
             type = new String[1]; //On definit la taille du tableau de String
             for (int i =1; i<2; i++) { // On convertit tout les elements de l'array en string
                 type[i-1] = (String) list.get(i);
@@ -153,7 +153,7 @@ public class Maj {
              requete = "DELETE FROM infirmier WHERE infirmier.numero='" + type[0] + "';";
              connectLocal.executeUpdate(requete);   // puis on l'execute   
         }
-        else if (list.get(0) == "malade") { // Pour la table Malade
+        else if (list.get(0) == "Malade") { // Pour la table Malade
             type = new String[1]; //On definit la taille du tableau de String
             for (int i =1; i<2; i++) { // On convertit tout les elements de l'array en string
                 type[i-1] = (String) list.get(i);
@@ -162,7 +162,7 @@ public class Maj {
              requete = "DELETE FROM malade WHERE malade.numero='" + type[0] + "';";
              connectLocal.executeUpdate(requete);   // puis on l'execute   
         }
-        else if (list.get(0) == "soigne") { //soigne
+        else if (list.get(0) == "Soigne") { //soigne
             type = new String[2];
             for (int i =1; i<3; i++) {
                 type[i-1] = (String) list.get(i);
@@ -175,7 +175,7 @@ public class Maj {
     @SuppressWarnings("empty-statement")
     public void modifierObjet(ArrayList list) throws SQLException {
         int taille = list.size();
-        if (list.get(0) == "service") { // Pour la table Service
+        if (list.get(0) == "Service") { // Pour la table Service
             type = new String[taille]; //On definit la taille du tableau de String
             for (int i =0; i<taille; i++) { // On convertit tout les elements de l'array en string
                 type[i] = (String) list.get(i);
@@ -193,7 +193,7 @@ public class Maj {
              System.out.print(requete);
              connectLocal.executeUpdate(requete);   // puis on l'execute  
         }
-        else if (list.get(0) == "chambre") { // Pour la table Chambre
+        else if (list.get(0) == "Chambre") { // Pour la table Chambre
             type = new String[taille]; //On definit la taille du tableau de String
             for (int i =0; i<taille; i++) { // On convertit tout les elements de l'array en string
                 type[i] = (String) list.get(i);
@@ -211,7 +211,7 @@ public class Maj {
              System.out.print(requete);
              connectLocal.executeUpdate(requete);   // puis on l'execute  
         }
-        else if (list.get(0) == "docteur") { // Pour la table Docteur
+        else if (list.get(0) == "Docteur") { // Pour la table Docteur
             type = new String[taille]; //On definit la taille du tableau de String
             for (int i =0; i<taille; i++) { // On convertit tout les elements de l'array en string
                 type[i] = (String) list.get(i);
@@ -229,7 +229,7 @@ public class Maj {
              System.out.print(requete);
              connectLocal.executeUpdate(requete);   // puis on l'execute  
         }
-        else if (list.get(0) == "employe") { // Pour la table Employe
+        else if (list.get(0) == "Employe") { // Pour la table Employe
             type = new String[taille]; //On definit la taille du tableau de String
             for (int i =0; i<taille; i++) { // On convertit tout les elements de l'array en string
                 type[i] = (String) list.get(i);
@@ -247,7 +247,7 @@ public class Maj {
              System.out.print(requete);
              connectLocal.executeUpdate(requete);   // puis on l'execute  
         }
-        else if (list.get(0) == "hospitalisation") { // Pour la table Employe
+        else if (list.get(0) == "Hospitalisation") { // Pour la table Employe
             type = new String[taille]; //On definit la taille du tableau de String
             for (int i =0; i<taille; i++) { // On convertit tout les elements de l'array en string
                 type[i] = (String) list.get(i);
@@ -265,7 +265,7 @@ public class Maj {
              System.out.print(requete);
              connectLocal.executeUpdate(requete);   // puis on l'execute  
         }
-        else if (list.get(0) == "infirmier") { // Pour la table Infirmier
+        else if (list.get(0) == "Infirmier") { // Pour la table Infirmier
             type = new String[taille]; //On definit la taille du tableau de String
             for (int i =0; i<taille; i++) { // On convertit tout les elements de l'array en string
                 type[i] = (String) list.get(i);
@@ -283,7 +283,7 @@ public class Maj {
              System.out.print(requete);
              connectLocal.executeUpdate(requete);   // puis on l'execute  
         }
-        else if (list.get(0) == "malade") { // Pour la table Employe
+        else if (list.get(0) == "Malade") { // Pour la table Employe
             type = new String[taille]; //On definit la taille du tableau de String
             for (int i =0; i<taille; i++) { // On convertit tout les elements de l'array en string
                 type[i] = (String) list.get(i);
@@ -301,7 +301,7 @@ public class Maj {
              System.out.print(requete);
              connectLocal.executeUpdate(requete);   // puis on l'execute  
         }
-        else if (list.get(0) == "soigne") { // Pour la table soigne
+        else if (list.get(0) == "Soigne") { // Pour la table soigne
             type = new String[taille]; //On definit la taille du tableau de String
             for (int i =0; i<taille; i++) { // On convertit tout les elements de l'array en string
                 type[i] = (String) list.get(i);
