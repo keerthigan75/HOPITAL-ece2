@@ -95,7 +95,7 @@ public class TestModifier extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel3.setText("numero");
+        jLabel3.setText("numero à modifier");
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -344,8 +344,8 @@ public class TestModifier extends javax.swing.JFrame {
         });
         
         
-        jLabel3.setText("numero");
-        jLabel6.setText("codeService");
+        jLabel3.setText("codeService");
+        jLabel6.setText("numero à modifier");
         jLabel7.setText("surveillant");
         jLabel4.setText("nb_lits");
 
@@ -440,7 +440,7 @@ public class TestModifier extends javax.swing.JFrame {
 
         jLabel5.setText("Modifier une hospitalisation");
 
-        jLabel3.setText("numero malade");
+        jLabel3.setText("numero malade à modifier");
 
         jLabel6.setText("codeService");
 
@@ -585,7 +585,7 @@ public class TestModifier extends javax.swing.JFrame {
 
         jLabel5.setText("Modifier une Service");
 
-        jLabel3.setText("Code");
+        jLabel3.setText("Code à modifier");
 
         jLabel6.setText("nom");
 
@@ -734,7 +734,7 @@ public class TestModifier extends javax.swing.JFrame {
 
         jLabel5.setText("Modifier un docteur");
 
-        jLabel3.setText("numero");
+        jLabel3.setText("numero à modifier");
 
         jLabel6.setText("nom");
 
@@ -744,7 +744,7 @@ public class TestModifier extends javax.swing.JFrame {
 
         jLabel8.setText("adresse");
 
-        jLabel9.setText("codeService");
+        jLabel9.setText("specialite");
 
         jTextField17.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -909,7 +909,7 @@ public class TestModifier extends javax.swing.JFrame {
 
         jLabel5.setText("Modifier un Employe");
 
-        jLabel3.setText("numero");
+        jLabel3.setText("numero à modifier");
 
         jLabel6.setText("nom");
 
@@ -1073,7 +1073,7 @@ public class TestModifier extends javax.swing.JFrame {
 
         jLabel5.setText("Modifier un malade");
 
-        jLabel3.setText("mutuelle");
+        jLabel3.setText("numero  à modifier");
 
         jLabel6.setText("nom");
 
@@ -1083,7 +1083,7 @@ public class TestModifier extends javax.swing.JFrame {
 
         jLabel8.setText("adresse");
 
-        jLabel9.setText("codeService");
+        jLabel9.setText("mutuelle");
 
         jTextField28.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1478,44 +1478,48 @@ public class TestModifier extends javax.swing.JFrame {
     }                                        
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) throws InterruptedException, SQLException{                                         
         // TODO add your handling code here:
-        if(jTextField1.getText()!="")
-        {
-            requete.add("");
-            requete.add(jTextField1.getText());
-        }
+        requete.clear();
+        requete.add("Employe");
+        
+        requete.add(jTextField1.getText());
+        
         if(jTextField2.getText()!="")
         {
-            requete.add("");
+            requete.add("nom");
             requete.add(jTextField2.getText());
         }
         if(jTextField3.getText()!="")
         {
-            requete.add("");
+            requete.add("prenom");
             requete.add(jTextField3.getText());
         }
         if(jTextField4.getText()!="")
         {
-            requete.add("");
+            requete.add("telephone");
             requete.add(jTextField4.getText());
         }
         if(jTextField5.getText()!="")
         {
-            requete.add("");
+            requete.add("adresse");
             requete.add(jTextField5.getText());
         }
+        requete.clear();
+        requete.add("Infirmier");
+        requete.add(jTextField1.getText());
         if(jTextField6.getText()!="")
         {
-            requete.add("");
+            
+            requete.add("code_service");
             requete.add(jTextField6.getText());
         }
         if(jTextField7.getText()!="")
         {
-            requete.add("");
+            requete.add("rotation");
             requete.add(jTextField7.getText());
         }
         if(jTextField8.getText()!="")
         {
-            requete.add("");
+            requete.add("salaire");
             requete.add(jTextField8.getText());
         }
         
@@ -1532,24 +1536,23 @@ public class TestModifier extends javax.swing.JFrame {
     }    
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) throws InterruptedException, SQLException{                                         
         // TODO add your handling code here:
+        requete.clear();
+        requete.add("Chambre");
+        requete.add(jTextField10.getText());
+       
         if(jTextField9.getText()!="")
         {
-            requete.add("");
+            requete.add("code_service");
             requete.add(jTextField9.getText());
-        }
-        if(jTextField10.getText()!="")
-        {
-            requete.add("");
-            requete.add(jTextField10.getText());
         }
         if(jTextField11.getText()!="")
         {
-            requete.add("");
+            requete.add("surveillant");
             requete.add(jTextField11.getText());
         }
         if(jTextField12.getText()!="")
         {
-            requete.add("");
+            requete.add("nb_lits");
             requete.add(jTextField12.getText());
         }
         miseajour.modifierObjet(requete);
@@ -1561,24 +1564,23 @@ public class TestModifier extends javax.swing.JFrame {
     }
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) throws InterruptedException, SQLException{                                         
         // TODO add your handling code here:
-        if(jTextField13.getText()!="")
-        {
-            requete.add("");
-            requete.add(jTextField13.getText());
-        }
+        requete.clear();
+        requete.add("Hospitalisation");
+        requete.add(jTextField13.getText());
+
         if(jTextField14.getText()!="")
         {
-            requete.add("");
+            requete.add("code_service");
             requete.add(jTextField14.getText());
         }
         if(jTextField15.getText()!="")
         {
-            requete.add("");
+            requete.add("no_chambre");
             requete.add(jTextField15.getText());
         }
         if(jTextField16.getText()!="")
         {
-            requete.add("");
+            requete.add("lit");
             requete.add(jTextField16.getText());
         }
         miseajour.modifierObjet(requete);
@@ -1590,24 +1592,23 @@ public class TestModifier extends javax.swing.JFrame {
     }
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) throws InterruptedException, SQLException{                                         
         // TODO add your handling code here:
-        if(jTextField36.getText()!="")
-        {
-            requete.add("");
-            requete.add(jTextField36.getText());
-        }
+        
+        requete.add("Service");
+        requete.add(jTextField36.getText());
+        
         if(jTextField37.getText()!="")
         {
-            requete.add("");
+            requete.add("nom");
             requete.add(jTextField37.getText());
         }
         if(jTextField38.getText()!="")
         {
-            requete.add("");
+            requete.add("batiment");
             requete.add(jTextField38.getText());
         }
         if(jTextField39.getText()!="")
         {
-            requete.add("");
+            requete.add("directeur");
             requete.add(jTextField39.getText());
         }
         miseajour.modifierObjet(requete);
@@ -1615,34 +1616,36 @@ public class TestModifier extends javax.swing.JFrame {
     }                                        
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) throws InterruptedException, SQLException{                                         
         // TODO add your handling code here:
-        if(jTextField17.getText()!="")
-        {
-            requete.add("");
-            requete.add(jTextField17.getText());
-        }
+        requete.clear();
+        requete.add("Employe");
+        requete.add(jTextField17.getText());
+        
         if(jTextField18.getText()!="")
         {
-            requete.add("");
+            requete.add("nom");
             requete.add(jTextField18.getText());
         }
         if(jTextField19.getText()!="")
         {
-            requete.add("");
+            requete.add("prenom");
             requete.add(jTextField19.getText());
         }
         if(jTextField20.getText()!="")
         {
-            requete.add("");
+            requete.add("tel");
             requete.add(jTextField20.getText());
         }
         if(jTextField21.getText()!="")
         {
-            requete.add("");
+            requete.add("adresse");
             requete.add(jTextField21.getText());
         }
+        requete.clear();
+        requete.add("Docteur");
+        requete.add(jTextField17.getText());
         if(jTextField22.getText()!="")
         {
-            requete.add("");
+            requete.add("specialite");
             requete.add(jTextField22.getText());
         }
         System.out.println(requete);
@@ -1655,29 +1658,28 @@ public class TestModifier extends javax.swing.JFrame {
     }
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) throws InterruptedException, SQLException {                                         
         // TODO add your handling code here:
-        if(jTextField23.getText()!="")
-        {
-            requete.add("");
-            requete.add(jTextField23.getText());
-        }
+        
+        requete.add("");
+        requete.add(jTextField23.getText());
+        
         if(jTextField24.getText()!="")
         {
-            requete.add("");
+            requete.add("nom");
             requete.add(jTextField24.getText());
         }
         if(jTextField25.getText()!="")
         {
-            requete.add("");
+            requete.add("prenom");
             requete.add(jTextField25.getText());
         }
         if(jTextField26.getText()!="")
         {
-            requete.add("");
+            requete.add("tel");
             requete.add(jTextField26.getText());
         }
         if(jTextField27.getText()!="")
         {
-            requete.add("");
+            requete.add("adresse");
             requete.add(jTextField27.getText());
         }
         miseajour.modifierObjet(requete);
@@ -1689,35 +1691,34 @@ public class TestModifier extends javax.swing.JFrame {
     }
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) throws InterruptedException, SQLException {                                         
         // TODO add your handling code here:
-        if(jTextField28.getText()!="")
-        {
-            requete.add("");
-            requete.add(jTextField28.getText());
-        }
+        requete.clear();
+        requete.add("Malade");
+        requete.add(jTextField33.getText());
+        
         if(jTextField29.getText()!="")
         {
-            requete.add("");
+            requete.add("nom");
             requete.add(jTextField29.getText());
         }
         if(jTextField30.getText()!="")
         {
-            requete.add("");
+            requete.add("prenom");
             requete.add(jTextField30.getText());
         }
         if(jTextField31.getText()!="")
         {
-            requete.add("");
+            requete.add("tel");
             requete.add(jTextField31.getText());
         }
         if(jTextField32.getText()!="")
         {
-            requete.add("");
+            requete.add("adresse");
             requete.add(jTextField32.getText());
         }
         if(jTextField33.getText()!="")
         {
-            requete.add("");
-            requete.add(jTextField33.getText());
+            requete.add("mutuelle");
+            requete.add(jTextField28.getText());
         }
         miseajour.modifierObjet(requete);
         this.dispose();

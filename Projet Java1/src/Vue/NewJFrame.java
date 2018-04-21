@@ -102,7 +102,7 @@ public class NewJFrame extends javax.swing.JFrame {
         });
 
         jComboBox1.setBackground(new java.awt.Color(176, 149, 167));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Chambre", "Docteur", "Employé", "Hospitalisation", "Infirmier", "Malade", "Service", "Soigne" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Chambre", "Docteur", "Employe", "Hospitalisation", "Infirmier", "Malade", "Service", "Soigne" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
