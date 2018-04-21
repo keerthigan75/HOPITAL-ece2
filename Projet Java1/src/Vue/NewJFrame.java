@@ -250,16 +250,38 @@ public class NewJFrame extends javax.swing.JFrame {
             else if(envoie == "UPDATE")
             {
                 System.out.println("bonjour non");
+                envoie = testee; 
+                System.out.println(envoie);
+                TestModifier modi = null;
+                try {
+                    modi = new TestModifier(envoie);
+                } catch (SQLException ex) {
+                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                modi.setVisible(true);
                 
             }
             else if(envoie == "DELETE"){
                 System.out.println("bonjour1");
                 envoie = testee; 
                 System.out.println(envoie);
-                TestSupprimer supp = new TestSupprimer(envoie);
+                TestSupprimer supp = null;
+                try {
+                    supp = new TestSupprimer(envoie);
+                } catch (SQLException ex) {
+                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 supp.setVisible(true);
             }
         }
+        
+        
+        
+        
         else if(testee == "Docteur"){
             System.out.println("bonjour2");
             if(envoie == "INSERT INTO"){
@@ -280,18 +302,41 @@ public class NewJFrame extends javax.swing.JFrame {
             }
             else if(envoie == "UPDATE")
             {
-                System.out.println("bonjour non");
+                System.out.println("bonjour 45");
+                envoie = testee; 
+                System.out.println(envoie);
+                TestModifier modi = null;
+                try {
+                    modi = new TestModifier(envoie);
+                } catch (SQLException ex) {
+                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                modi.setVisible(true);
+                
                 
             }
             else if(envoie == "DELETE"){
                 System.out.println("bonjour1");
                 envoie = testee; 
                 System.out.println(envoie);
-                TestSupprimer supp = new TestSupprimer(envoie);
+                TestSupprimer supp = null;
+                try {
+                    supp = new TestSupprimer(envoie);
+                } catch (SQLException ex) {
+                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 supp.setVisible(true);
             }
             
         }
+        
+        
+        
+        
         else if(testee == "Employe"){
             System.out.println("bonjour3");
             if(envoie == "INSERT INTO"){
@@ -313,13 +358,33 @@ public class NewJFrame extends javax.swing.JFrame {
             else if(envoie == "UPDATE")
             {
                 System.out.println("bonjour non");
+                System.out.println("bonjour non");
+                envoie = testee; 
+                System.out.println(envoie);
+                TestModifier modi = null;
+                try {
+                    modi = new TestModifier(envoie);
+                } catch (SQLException ex) {
+                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                modi.setVisible(true);
+                
                 
             }
             else if(envoie == "DELETE"){
                 System.out.println("bonjour1");
                 envoie = testee; 
                 System.out.println(envoie);
-                TestSupprimer supp = new TestSupprimer(envoie);
+                TestSupprimer supp = null;
+                try {
+                    supp = new TestSupprimer(envoie);
+                } catch (SQLException ex) {
+                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 supp.setVisible(true);
             }
         }
@@ -344,16 +409,38 @@ public class NewJFrame extends javax.swing.JFrame {
             else if(envoie == "UPDATE")
             {
                 System.out.println("bonjour non");
+                System.out.println("bonjour non");
+                envoie = testee; 
+                System.out.println(envoie);
+                TestModifier modi = null;
+                try {
+                    modi = new TestModifier(envoie);
+                } catch (SQLException ex) {
+                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                modi.setVisible(true);
+                
                 
             }
             else if(envoie == "DELETE"){
                 System.out.println("bonjour1");
                 envoie = testee; 
                 System.out.println(envoie);
-                TestSupprimer supp = new TestSupprimer(envoie);
+                TestSupprimer supp = null;
+                try {
+                    supp = new TestSupprimer(envoie);
+                } catch (SQLException ex) {
+                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 supp.setVisible(true);
             }
         }
+        
+        
         else if(testee == "Infirmier"){
             System.out.println("bonjour5");
             if(envoie == "INSERT INTO"){
@@ -375,16 +462,40 @@ public class NewJFrame extends javax.swing.JFrame {
             else if(envoie == "UPDATE")
             {
                 System.out.println("bonjour non");
+                envoie = testee; 
+                System.out.println(envoie);
+                TestModifier modi = null;
+                try {
+                    modi = new TestModifier(envoie);
+                } catch (SQLException ex) {
+                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                modi.setVisible(true);
+                
                 
             }
             else if(envoie == "DELETE"){
                 System.out.println("bonjour1");
                 envoie = testee; 
                 System.out.println(envoie);
-                TestSupprimer supp = new TestSupprimer(envoie);
+                TestSupprimer supp = null;
+                try {
+                    supp = new TestSupprimer(envoie);
+                } catch (SQLException ex) {
+                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 supp.setVisible(true);
             }
         }
+        
+        
+        
+        
+        
         else if(testee == "Malade"){
             System.out.println("bonjour6");
             if(envoie == "INSERT INTO"){
@@ -406,16 +517,39 @@ public class NewJFrame extends javax.swing.JFrame {
             else if(envoie == "UPDATE")
             {
                 System.out.println("bonjour non");
+                envoie = testee; 
+                System.out.println(envoie);
+                TestModifier modi = null;
+                try {
+                    modi = new TestModifier(envoie);
+                } catch (SQLException ex) {
+                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                modi.setVisible(true);
+                
                 
             }
             else if(envoie == "DELETE"){
                 System.out.println("bonjour1");
                 envoie = testee; 
                 System.out.println(envoie);
-                TestSupprimer supp = new TestSupprimer(envoie);
+                TestSupprimer supp = null;
+                try {
+                    supp = new TestSupprimer(envoie);
+                } catch (SQLException ex) {
+                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 supp.setVisible(true);
             }
         }
+        
+        
+        
+        
         else if(testee == "Service"){
             System.out.println("bonjour7");
             if(envoie == "INSERT INTO"){
@@ -437,16 +571,38 @@ public class NewJFrame extends javax.swing.JFrame {
             else if(envoie == "UPDATE")
             {
                 System.out.println("bonjour non");
+                envoie = testee; 
+                System.out.println(envoie);
+                TestModifier modi = null;
+                try {
+                    modi = new TestModifier(envoie);
+                } catch (SQLException ex) {
+                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                modi.setVisible(true);
+                
                 
             }
             else if(envoie == "DELETE"){
                 System.out.println("bonjour1");
                 envoie = testee; 
                 System.out.println(envoie);
-                TestSupprimer supp = new TestSupprimer(envoie);
+                TestSupprimer supp = null;
+                try {
+                    supp = new TestSupprimer(envoie);
+                } catch (SQLException ex) {
+                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 supp.setVisible(true);
             }
         }
+        
+        
+        
         else if(testee == "Soigne"){
             System.out.println("bonjour8");
             if(envoie == "INSERT INTO"){
@@ -468,13 +624,32 @@ public class NewJFrame extends javax.swing.JFrame {
             else if(envoie == "UPDATE")
             {
                 System.out.println("bonjour non");
+                envoie = testee; 
+                System.out.println(envoie);
+                TestModifier modi = null;
+                try {
+                    modi = new TestModifier(envoie);
+                } catch (SQLException ex) {
+                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                modi.setVisible(true);
+                
                 
             }
             else if(envoie == "DELETE"){
                 System.out.println("bonjour1");
                 envoie = testee; 
                 System.out.println(envoie);
-                TestSupprimer supp = new TestSupprimer(envoie);
+                TestSupprimer supp = null;
+                try {
+                    supp = new TestSupprimer(envoie);
+                } catch (SQLException ex) {
+                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 supp.setVisible(true);
             }
         }
