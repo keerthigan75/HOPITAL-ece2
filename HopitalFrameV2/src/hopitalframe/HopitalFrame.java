@@ -16,6 +16,7 @@ public class HopitalFrame {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        new Menu2().setVisible(true);
     }
     
 }

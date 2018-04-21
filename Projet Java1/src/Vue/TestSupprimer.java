@@ -831,7 +831,7 @@ private void initComponents8() {
     }                                        
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) throws InterruptedException, SQLException{                                         
         // TODO add your handling code here:
-        requete.add("");
+        
         requete.add(jTextField1.getText());
         //envoyer requete
         
