@@ -159,16 +159,17 @@ public class Menu extends javax.swing.JFrame {
 
     private void supprimerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_supprimerActionPerformed
         // TODO add your handling code here:
-       
-    
+        String bg = evt.getActionCommand();
+        if (bg.equals("supprimer dans une table")){
+       /// RETOURNE UN INT 
+    }
     }//GEN-LAST:event_supprimerActionPerformed
- 
+
     private void ajouterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ajouterActionPerformed
         // TODO add your handling code here:
         String bg = evt.getActionCommand();
         if (bg.equals("ajouter dans une table")){
             //RETOURNE UN INT
-           
     
     }//GEN-LAST:event_ajouterActionPerformed
     }
@@ -185,45 +186,36 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
         /// BOUTON GO, PARAMETRE AJOUTER MODIFIER SUPPRIMER A RECEVOIR ET A OUVRIR LES FENETRES DE THOMAS
     }//GEN-LAST:event_button3ActionPerformed
- private int jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {                                           
+ private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {                                           
         // TODO add your handling code here:
-       int value;
+        
       jComboBox1.addItemListener((ItemListener) this);
       String s = String.valueOf(jComboBox1.getSelectedItem());
       // LES TABLES :"SERVICE", "CHAMBRE", "EMPLOYE", "DOCTEUR", "INFIRMIER", "MALADE", "HOSPITALISATION", "SOIGNE"
       if(s.toString().equals("SERVICE")){
-          value=1;
-          return value;
+          // RETOURNER ICI UN INT/ OU AUTRE A VOIR
       }
       if(s.toString().equals("EMPLOYE")){
-          value=2;
-          return value;
+          // RETOURNER ICI UN INT/ OU AUTRE A VOIR
       }
       if(s.toString().equals("DOCTEUR")){
-          value=3;
-          return value;
+          // RETOURNER ICI UN INT/ OU AUTRE A VOIR
       }
       if(s.toString().equals("INFIRMIER")){
-          value=4;
-          return value;
+          // RETOURNER ICI UN INT/ OU AUTRE A VOIR
       }
       if(s.toString().equals("MALADE")){
-          value=5;
-          return value;
+          // RETOURNER ICI UN INT/ OU AUTRE A VOIR
       }
       if(s.toString().equals("HOSPITALISATION")){
-          value=6;
-          return value;
-      }
+          
+      }// RETOURNER ICI UN INT/ OU AUTRE A VOIR
       if(s.toString().equals("SOIGNE")){
-          value=7;
-          return value;
+          // RETOURNER ICI UN INT/ OU AUTRE A VOIR
       }
       if(s.toString().equals("CHAMBRE")){
-          value=8;
-          return value;
+          // RETOURNER ICI UN INT/ OU AUTRE A VOIR
       }
-      else return 0;
       
         
         
