@@ -87,7 +87,12 @@ public class MReporting extends javax.swing.JFrame {
                     .addContainerGap(245, Short.MAX_VALUE)))
         );
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NOMBRE D'HOSPITALISATION PAR SERVICE", "NOMBRE DE DOCTEURS, INFIRMIERS et MALADES", "NOMBRE DE DOCTEURS PAR SPECIALITE", "NOMBRE D'INFIRMIERS PAR SERVICE" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NOMBRE D'HOSPITALISATION PAR SERVICE", "NOMBRE DE DOCTEURS", "NOMBRE INFIRMIERS", "NOMBRE DE MALADES", "NOMBRE DE DOCTEURS PAR SPECIALITE", "NOMBRE D'INFIRMIERS PAR SERVICE" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
 
         button1.setBackground(new java.awt.Color(204, 51, 0));
         button1.setFont(new java.awt.Font("Calibri Light", 0, 14)); // NOI18N
@@ -195,12 +200,15 @@ public class MReporting extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-/// BOUTON GO 
+
+    Menu2 fetch;
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
         // TODO add your handling code here:
-        
-        // OUVERTURE DE LA FENETRE ANTERIEURE DE THOMAS  
+        /// BOUTON RETOUR
+        Menu2 fetch = new Menu2();
         this.dispose();
+        fetch.setVisible(true);
+       
     }//GEN-LAST:event_button1ActionPerformed
 
 
@@ -210,8 +218,6 @@ public class MReporting extends javax.swing.JFrame {
         
         
       /// CETTE FONCTION RECOIT LE INT DE jRadioButton1ActionPerformed, jRadioButton2ActionPerforme et le int je JcomBox1  et affiche graphes
-
-        this.dispose();
     }//GEN-LAST:event_button3ActionPerformed
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
@@ -232,16 +238,24 @@ public class MReporting extends javax.swing.JFrame {
     }
         
     }//GEN-LAST:event_jRadioButton2ActionPerformed
-private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {                                           
-        // TODO add your handling code here:
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         
-      jComboBox1.addItemListener((ItemListener) this);
+        /// AFFICHER TOUTE LA TABLE
+        
+        jComboBox1.addItemListener((ItemListener) this);
       String s = String.valueOf(jComboBox1.getSelectedItem());
       // LES TABLES :"NOMBRE D'HOSPITALISATION PAR SERVICE", "NOMBRE DE DOCTEURS", "NOMBRE INFIRMIERS", "NOMBRE DE MALADES", "NOMBRE DE DOCTEURS PAR SPECIALITE", "NOMBRE D'INFIRMIERS PAR SERVICE"
       if(s.toString().equals("NOMBRE D'HOSPITALISATION PAR SERVICE")){
           // RETOURNER ICI UN INT/ OU AUTRE A VOIR
       }
-      if(s.toString().equals("NOMBRE DE DOCTEURS, INFIRMIERS et MALADES")){
+      if(s.toString().equals("NOMBRE DE DOCTEURS")){
+          // RETOURNER ICI UN INT/ OU AUTRE A VOIR
+      }
+      if(s.toString().equals("NOMBRE INFIRMIERS")){
+          // RETOURNER ICI UN INT/ OU AUTRE A VOIR
+      }
+      if(s.toString().equals("NOMBRE DE MALADES")){
           // RETOURNER ICI UN INT/ OU AUTRE A VOIR
       }
       if(s.toString().equals("NOMBRE DE DOCTEURS PAR SPECIALITE")){
@@ -250,10 +264,8 @@ private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {
       if(s.toString().equals("NOMBRE D'INFIRMIERS PAR SERVICE")){
           
       }
-        
-        
-        
-    } 
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -282,11 +294,7 @@ private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new MReporting().setVisible(true);
-            }
-        });
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

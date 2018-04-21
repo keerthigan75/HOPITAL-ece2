@@ -76,6 +76,11 @@ public class Menu2 extends javax.swing.JFrame {
         button1.setBackground(new java.awt.Color(255, 102, 0));
         button1.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         button1.setLabel("Deconnexion");
+        button1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -135,33 +140,47 @@ public class Menu2 extends javax.swing.JFrame {
     
     
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        /// BOUTON RECHERCHE
         
-        Mrecherche recherche = new Mrecherche();
-        this.dispose();
+        /// MISE A JOUR DE THOMAS
+        
         
     }//GEN-LAST:event_jButton1ActionPerformed
-     ///MISE A JOUR
+     MReporting reporting;
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        ///MISE A JOUR
-        
-        /// ON OUVRE LA FENETRE MISE A JOUR DE THOMAS
+        /// REPORTING
+        MReporting reporting= new MReporting();
+        this.dispose();
+        reporting.setVisible(true);
         
     }//GEN-LAST:event_jButton2ActionPerformed
-     
+     MReporting recherche;
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        /// REPORTING
-        MReporting reporting = new MReporting();
+        /// RECHERCHE
+        Mrecherche recherche = new Mrecherche();
         this.dispose();
+        recherche.setVisible(true);
+        pack();
+        setDefaultLookAndFeelDecorated(true);
+        setExtendedState(this.MAXIMIZED_BOTH);
         
     }//GEN-LAST:event_jButton3ActionPerformed
-private void button1ActionPerformed(java.awt.event.ActionEvent evt) {   
-    /// DECONNEXION
+
     
-    SignIn fen = new SignIn();
-    this.dispose();
+    
+    SignIn fen;
+    private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
+        /// DECONNEXION 
         
-    }
+        SignIn fen = new SignIn();
+    
+       fen.setVisible(true);
+       this.dispose();
+    }//GEN-LAST:event_button1ActionPerformed
+
+    
+    
+    
+
     /**
      * @param args the command line arguments
      */
@@ -190,11 +209,7 @@ private void button1ActionPerformed(java.awt.event.ActionEvent evt) {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Menu2().setVisible(true);
-            }
-        });
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

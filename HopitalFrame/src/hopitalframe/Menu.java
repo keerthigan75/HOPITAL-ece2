@@ -88,6 +88,11 @@ public class Menu extends javax.swing.JFrame {
 
         jComboBox1.setBackground(new java.awt.Color(255, 102, 51));
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SERVICE", "CHAMBRE", "EMPLOYE", "DOCTEUR", "INFIRMIER", "MALADE", "HOSPITALISATION", "SOIGNE" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
 
         button3.setActionCommand("GO1");
         button3.setBackground(new java.awt.Color(255, 51, 0));
@@ -158,23 +163,23 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void supprimerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_supprimerActionPerformed
-        // TODO add your handling code here:
-        String bg = evt.getActionCommand();
-        if (bg.equals("supprimer dans une table")){
-       /// RETOURNE UN INT 
-    }
+        /// SUPPRIMER DANS UNE TABLE
+        
+    
     }//GEN-LAST:event_supprimerActionPerformed
-
+ 
     private void ajouterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ajouterActionPerformed
-        // TODO add your handling code here:
+        // AJOUTER DANS UNE TABLE
+        
         String bg = evt.getActionCommand();
         if (bg.equals("ajouter dans une table")){
             //RETOURNE UN INT
+           
     
     }//GEN-LAST:event_ajouterActionPerformed
     }
     private void modifierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifierActionPerformed
-        // TODO add your handling code here:
+        /// MODIFIER
         String bg = evt.getActionCommand();
         if (bg.equals("modifier dans une table")){
        /// RETOURNE UN INT
@@ -186,41 +191,42 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
         /// BOUTON GO, PARAMETRE AJOUTER MODIFIER SUPPRIMER A RECEVOIR ET A OUVRIR LES FENETRES DE THOMAS
     }//GEN-LAST:event_button3ActionPerformed
- private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {                                           
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
-        
+       
       jComboBox1.addItemListener((ItemListener) this);
       String s = String.valueOf(jComboBox1.getSelectedItem());
       // LES TABLES :"SERVICE", "CHAMBRE", "EMPLOYE", "DOCTEUR", "INFIRMIER", "MALADE", "HOSPITALISATION", "SOIGNE"
       if(s.toString().equals("SERVICE")){
-          // RETOURNER ICI UN INT/ OU AUTRE A VOIR
+          
       }
       if(s.toString().equals("EMPLOYE")){
-          // RETOURNER ICI UN INT/ OU AUTRE A VOIR
+          
       }
       if(s.toString().equals("DOCTEUR")){
-          // RETOURNER ICI UN INT/ OU AUTRE A VOIR
+         
       }
       if(s.toString().equals("INFIRMIER")){
-          // RETOURNER ICI UN INT/ OU AUTRE A VOIR
+          
       }
       if(s.toString().equals("MALADE")){
-          // RETOURNER ICI UN INT/ OU AUTRE A VOIR
+          
       }
       if(s.toString().equals("HOSPITALISATION")){
           
-      }// RETOURNER ICI UN INT/ OU AUTRE A VOIR
+      }
       if(s.toString().equals("SOIGNE")){
-          // RETOURNER ICI UN INT/ OU AUTRE A VOIR
+          
+         
       }
       if(s.toString().equals("CHAMBRE")){
-          // RETOURNER ICI UN INT/ OU AUTRE A VOIR
+         
+         
       }
-      
-        
-        
-        
-    }
+    
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+ 
     /**
      * @param args the command line arguments
      */
@@ -249,11 +255,7 @@ public class Menu extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Menu().setVisible(true);
-            }
-        });
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

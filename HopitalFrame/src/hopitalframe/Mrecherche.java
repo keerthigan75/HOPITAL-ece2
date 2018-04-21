@@ -78,6 +78,11 @@ public class Mrecherche extends javax.swing.JFrame {
         });
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NOMBRE D'HOSPITALISATION PAR SERVICE", "NOMBRE DE DOCTEURS", "NOMBRE INFIRMIERS", "NOMBRE DE MALADES", "NOMBRE DE DOCTEURS PAR SPECIALITE", "NOMBRE D'INFIRMIERS PAR SERVICE" }));
+        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox2ActionPerformed(evt);
+            }
+        });
 
         jPanel2.setBackground(new java.awt.Color(255, 51, 0));
 
@@ -147,7 +152,7 @@ public class Mrecherche extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 180, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -191,22 +196,39 @@ public class Mrecherche extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        setBounds(0, 0, 1244, 582);
+        setBounds(0, 0, 1074, 582);
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    
+    
+    
+    Menu2 satch;
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
         // TODO add your handling code here:
+        /// BOUTON RETOUR
+        
+        Menu2 satch = new Menu2();
+        this.dispose();
+        satch.setVisible(true);
     }//GEN-LAST:event_button1ActionPerformed
 
+    
+    
+    
+    
+    
+    
+    
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        // TODO add your handling code here:
+        /// AFFICHAGE TOUTE LA TABLE
         
       jComboBox1.addItemListener((ItemListener) this);
       String s = String.valueOf(jComboBox1.getSelectedItem());
@@ -240,10 +262,44 @@ public class Mrecherche extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_jComboBox1ActionPerformed
-private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {                                           
+
+   
+    
+    
+    
+    
+    
+    
+    
+    
+    private void button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button3ActionPerformed
         // TODO add your handling code here:
         
-      jComboBox2.addItemListener((ItemListener) this);
+        /// CEST LE BOUTON GO AFFICHAGE TOUTE LES TABLES 
+    }//GEN-LAST:event_button3ActionPerformed
+
+    
+    
+    
+    
+    private void button4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button4ActionPerformed
+        // TODO add your handling code here:
+        
+         /// CEST LE BOUTON GO AFFICHAGE REQUETE SPECIFIQUE
+    }//GEN-LAST:event_button4ActionPerformed
+
+    
+    
+    
+    
+    
+    
+    
+    
+    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+        
+        /// REQUETE SPECIFIQUE 
+        jComboBox2.addItemListener((ItemListener) this);
       String s = String.valueOf(jComboBox2.getSelectedItem());
       // LES TABLES :"NOMBRE D'HOSPITALISATION PAR SERVICE", "NOMBRE DE DOCTEURS", "NOMBRE INFIRMIERS", "NOMBRE DE MALADES", "NOMBRE DE DOCTEURS PAR SPECIALITE", "NOMBRE D'INFIRMIERS PAR SERVICE"
       if(s.toString().equals("NOMBRE D'HOSPITALISATION PAR SERVICE")){
@@ -265,20 +321,7 @@ private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {
           
       }
         
-        
-        
-    } 
-    private void button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button3ActionPerformed
-        // TODO add your handling code here:
-        
-        /// CEST LES BOUTONS GO/ EN VRAI CEST PAS UTILE MAIS A LIER SI BESOIN AVEC LES COMBOBOX
-    }//GEN-LAST:event_button3ActionPerformed
-
-    private void button4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button4ActionPerformed
-        // TODO add your handling code here:
-        
-         /// CEST LES BOUTONS GO/ EN VRAI CEST PAS UTILE MAIS A LIER SI BESOIN AVEC LES COMBOBOX
-    }//GEN-LAST:event_button4ActionPerformed
+    }//GEN-LAST:event_jComboBox2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -308,11 +351,7 @@ private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Mrecherche().setVisible(true);
-            }
-        });
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

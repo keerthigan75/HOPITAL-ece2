@@ -54,6 +54,11 @@ public class SignIn extends javax.swing.JFrame {
         button1.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         button1.setForeground(new java.awt.Color(255, 255, 255));
         button1.setLabel("To know more about it ...");
+        button1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button1ActionPerformed(evt);
+            }
+        });
 
         jPanel2.setBackground(new java.awt.Color(0, 102, 102));
 
@@ -65,6 +70,12 @@ public class SignIn extends javax.swing.JFrame {
         button2.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         button2.setForeground(new java.awt.Color(255, 255, 255));
         button2.setLabel("Connect");
+        button2.setName("button2"); // NOI18N
+        button2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -211,18 +222,34 @@ public class SignIn extends javax.swing.JFrame {
         String password=sc.nextLine();
         
     }//GEN-LAST:event_jTextField2ActionPerformed
-private void button2ActionPerformed(java.awt.event.ActionEvent evt) {                                        
-        Menu fen = new Menu();
+ToKnowMore fen;
+    private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
+        // TODO add your handling code here:
+        /// TO KNOW MORE ABOUT IT...
+        ToKnowMore fen = new ToKnowMore();
+        fen.setVisible(true);
+          
+    }//GEN-LAST:event_button1ActionPerformed
+ Menu2 pagina; 
+    private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
+        // TODO add your handling code here:
+        /// ON OUVRE LE MENU PRINCIPAL en LOCAL LOCAL LOCAL 
+        Menu2 pagina = new Menu2();
         this.dispose();
-    }                                       
+        pagina.setVisible(true);
+    }//GEN-LAST:event_button2ActionPerformed
 
+                                     
+Menu2 page;
     private void button3ActionPerformed(java.awt.event.ActionEvent evt) {                                        
         // TODO add your handling code here:
         
-        String password;
+        /// CONNECT EN ONLINE A VOIR AVEC USERNAME PASSWORD
         
-        Menu fen = new Menu();
+       
         this.dispose();
+        Menu2 page = new Menu2();
+        page.setVisible(true);
         
         
     }  
