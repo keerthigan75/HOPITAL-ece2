@@ -166,7 +166,7 @@ private void initComponents2() {
             }
         });
 
-        jLabel2.setText("numero chambre");
+        jLabel2.setText("numero chambre à modifier");
 
         jButton3.setText("Retour");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -192,7 +192,7 @@ private void initComponents2() {
             }
         });
 
-        jLabel3.setText("code service");
+        jLabel3.setText("code service à modifier");
 
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -867,8 +867,8 @@ private void initComponents8() {
     }    
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) throws InterruptedException, SQLException{                                         
         // TODO add your handling code here:
-        requete.add(jTextField2.getText());
         requete.add(jTextField3.getText());
+        requete.add(jTextField2.getText());
         for(int i=0;i<requete.size();i++)
         {
             System.out.println(requete.get(i));

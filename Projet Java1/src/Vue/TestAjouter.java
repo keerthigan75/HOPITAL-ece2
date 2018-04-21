@@ -1499,8 +1499,8 @@ public class TestAjouter extends javax.swing.JFrame {
     }    
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) throws InterruptedException, SQLException{                                         
         // TODO add your handling code here:
-        requete.add(jTextField10.getText());
         requete.add(jTextField9.getText());
+        requete.add(jTextField10.getText());
         requete.add(jTextField11.getText());
         requete.add(jTextField12.getText());
         miseajour.ajouterObjet(requete);

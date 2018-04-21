@@ -344,7 +344,7 @@ public class TestModifier extends javax.swing.JFrame {
         });
         
         
-        jLabel3.setText("codeService");
+        jLabel3.setText("codeService à modifier");
         jLabel6.setText("numero à modifier");
         jLabel7.setText("surveillant");
         jLabel4.setText("nb_lits");
@@ -1538,13 +1538,9 @@ public class TestModifier extends javax.swing.JFrame {
         // TODO add your handling code here:
         requete.clear();
         requete.add("Chambre");
+        requete.add(jTextField9.getText());
         requete.add(jTextField10.getText());
-       
-        if(jTextField9.getText()!="")
-        {
-            requete.add("code_service");
-            requete.add(jTextField9.getText());
-        }
+        
         if(jTextField11.getText()!="")
         {
             requete.add("surveillant");
