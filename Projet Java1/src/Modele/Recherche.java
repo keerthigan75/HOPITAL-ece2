@@ -7,8 +7,12 @@ package Modele;
 
 import Controle.Connexion;
 import Vue.Affichage_recherche;
+import java.awt.Dimension;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 
 /**
  *
@@ -89,8 +93,8 @@ public class Recherche {
                     break;
                     
         }
-        
-        affiche.affichage_recherche(recup);
+
+       affiche.affichage_recherche(recup);
         
         
                     
@@ -100,6 +104,8 @@ public class Recherche {
         
         recup = connectLocal.remplirChampsRequete("SELECT nom, prenom FROM malade WHERE mutuelle='MAAF';");
          System.out.println(recup);
+         System.out.println(recup.size());
+     
     }
     
     public void requete2() throws SQLException {
