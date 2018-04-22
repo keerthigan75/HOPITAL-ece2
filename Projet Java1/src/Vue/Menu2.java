@@ -5,6 +5,10 @@
  */
 package Vue;
 
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Keerthigan
@@ -150,7 +154,14 @@ public class Menu2 extends javax.swing.JFrame {
      MReporting reporting;
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         /// REPORTING
-        MReporting reporting= new MReporting();
+        MReporting reporting = null;
+        try {
+            reporting = new MReporting();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Menu2.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(Menu2.class.getName()).log(Level.SEVERE, null, ex);
+        }
         this.dispose();
         reporting.setVisible(true);
         
