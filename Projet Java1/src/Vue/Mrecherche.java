@@ -5,10 +5,14 @@
  */
 package Vue;
 
+import Modele.Recherche;
 import javax.swing.JComboBox;
 import java.awt.event.*;
 import java.awt.event.ItemListener;
 import java.awt.event.ItemEvent;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -16,10 +20,14 @@ import java.awt.event.ItemEvent;
  */
 public class Mrecherche extends javax.swing.JFrame {
 
+    private int choixAffiche;
+    private Recherche rech;
     /**
      * Creates new form Mrecherche
      */
-    public Mrecherche() {
+    public Mrecherche() throws SQLException, ClassNotFoundException {
+        choixAffiche = 0;
+        rech = new Recherche();
         initComponents();
     }
 
@@ -235,27 +243,34 @@ public class Mrecherche extends javax.swing.JFrame {
       System.out.println(testeee);
       // LES TABLES :"SERVICE", "CHAMBRE", "EMPLOYE", "DOCTEUR", "INFIRMIER", "MALADE", "HOSPITALISATION", "SOIGNE"
       if(testeee == "SERVICE"){
-          
+          choixAffiche = 1;
       }
       if(testeee == "EMPLOYE"){
           // RETOURNER ICI UN INT/ OU AUTRE A VOIR
+          choixAffiche = 2;
       }
       if(testeee == "DOCTEUR"){
           // RETOURNER ICI UN INT/ OU AUTRE A VOIR
+          choixAffiche = 3;
       }
       if(testeee == "INFIRMIER"){
           // RETOURNER ICI UN INT/ OU AUTRE A VOIR
+          choixAffiche = 4;
       }
       if(testeee == "MALADE"){
           // RETOURNER ICI UN INT/ OU AUTRE A VOIR
+          choixAffiche = 5;
       }
       if(testeee == "HOSPITALISATION"){
+          choixAffiche = 6;
           
       }// RETOURNER ICI UN INT/ OU AUTRE A VOIR
       if(testeee == "SOIGNE"){
           // RETOURNER ICI UN INT/ OU AUTRE A VOIR
+          choixAffiche = 7;
       }
       if(testeee == "CHAMBRE"){
+          choixAffiche = 8;
           // RETOURNER ICI UN INT/ OU AUTRE A VOIR
       }
       
@@ -274,9 +289,13 @@ public class Mrecherche extends javax.swing.JFrame {
     
     
     private void button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button3ActionPerformed
-        // TODO add your handling code here:
-        
-        /// CEST LE BOUTON GO AFFICHAGE TOUTE LES TABLES 
+        try {
+            // TODO add your handling code here:
+            rech.rechercheTable(choixAffiche);
+            /// CEST LE BOUTON GO AFFICHAGE TOUTE LES TABLES 
+        } catch (SQLException ex) {
+            Logger.getLogger(Mrecherche.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_button3ActionPerformed
 
     
@@ -284,9 +303,13 @@ public class Mrecherche extends javax.swing.JFrame {
     
     
     private void button4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button4ActionPerformed
-        // TODO add your handling code here:
-        
-         /// CEST LE BOUTON GO AFFICHAGE REQUETE SPECIFIQUE
+        try {
+            // TODO add your handling code here:
+            rech.rechercheRQ(choixAffiche);
+            /// CEST LE BOUTON GO AFFICHAGE REQUETE SPECIFIQUE
+        } catch (SQLException ex) {
+            Logger.getLogger(Mrecherche.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_button4ActionPerformed
 
     
@@ -305,34 +328,34 @@ public class Mrecherche extends javax.swing.JFrame {
       System.out.println(testeee);
       // LES TABLES :"NOMBRE D'HOSPITALISATION PAR SERVICE", "NOMBRE DE DOCTEURS", "NOMBRE INFIRMIERS", "NOMBRE DE MALADES", "NOMBRE DE DOCTEURS PAR SPECIALITE", "NOMBRE D'INFIRMIERS PAR SERVICE"
       if(testeee == "Malades à la mutuelle MAAF"){
-          
+          choixAffiche = 1;
       }
       if(testeee == "Infirmier en Nuit"){
-          
+          choixAffiche = 2;
       }
       if(testeee == "Informations Service et Directeur"){
-          
+          choixAffiche = 3;
       }
       if(testeee == "Lit occupé du Batiment B"){
-          
+          choixAffiche = 4;
       }
       if(testeee == "Salaire moyen des infirmiers par service"){
-          
+          choixAffiche = 5;
       }
       if(testeee == "Nombre moyen de lit dans le batiment A"){
-          
+          choixAffiche = 6;
       }
       if(testeee == "Malades soignés par plus de trois médecins"){
-          
+          choixAffiche = 7;
       }
       if(testeee == "Rapport Infirmier / Malades"){
-          
+          choixAffiche = 8;
       }
       if(testeee == "Docteur avec malade hospitalisé"){
-          
+          choixAffiche = 9;
       }
       if(testeee == "Docteur sans malade hospitalisé"){
-          
+          choixAffiche = 10;
       }
     }//GEN-LAST:event_jComboBox2ActionPerformed
 

@@ -169,7 +169,14 @@ public class Menu2 extends javax.swing.JFrame {
      MReporting recherche;
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         /// RECHERCHE
-        Mrecherche recherche = new Mrecherche();
+        Mrecherche recherche = null;
+        try {
+            recherche = new Mrecherche();
+        } catch (SQLException ex) {
+            Logger.getLogger(Menu2.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Menu2.class.getName()).log(Level.SEVERE, null, ex);
+        }
         this.dispose();
         recherche.setVisible(true);
         pack();

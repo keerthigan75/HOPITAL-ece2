@@ -52,6 +52,7 @@ public class Recherche {
                     this.aSoigne();
                     break;
         }
+        affiche.affichage_recherche(recup);
     }
     
     public void rechercheRQ(int numero) throws SQLException {
