@@ -6,7 +6,6 @@
 package Controle;
 
 
-import Modele.Recherche;
 import Vue.*;
 import java.sql.SQLException;
 /**
@@ -22,10 +21,8 @@ public class Main {
      */
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
         
-//        SignIn test = new SignIn();
-//        test.setVisible(true);
-           Recherche rech = new Recherche();
-           rech.rechercheRQ(1);
+        SignIn test = new SignIn();
+        test.setVisible(true);
     }
     
 }

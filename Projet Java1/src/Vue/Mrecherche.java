@@ -77,7 +77,7 @@ public class Mrecherche extends javax.swing.JFrame {
             }
         });
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NOMBRE D'HOSPITALISATION PAR SERVICE", "NOMBRE DE DOCTEURS", "NOMBRE INFIRMIERS", "NOMBRE DE MALADES", "NOMBRE DE DOCTEURS PAR SPECIALITE", "NOMBRE D'INFIRMIERS PAR SERVICE" }));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Malades à la mutuelle MAAF", "Infirmier en Nuit", "Informations Service et Directeur", "Lit occupé du Batiment B", "Salaire moyen des infirmiers par service", "Nombre moyen de lit dans le batiment A", "Malades soignés par plus de trois médecins", "Rapport Infirmier / Malades", "Docteur avec malade hospitalisé", "Docteur sans malade hospitalisé" }));
         jComboBox2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox2ActionPerformed(evt);
@@ -230,31 +230,32 @@ public class Mrecherche extends javax.swing.JFrame {
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         /// AFFICHAGE TOUTE LA TABLE
         
-      jComboBox1.addItemListener((ItemListener) this);
-      String s = String.valueOf(jComboBox1.getSelectedItem());
+      JComboBox testeez = (JComboBox)evt.getSource();
+      String testeee = (String)testeez.getSelectedItem();
+      System.out.println(testeee);
       // LES TABLES :"SERVICE", "CHAMBRE", "EMPLOYE", "DOCTEUR", "INFIRMIER", "MALADE", "HOSPITALISATION", "SOIGNE"
-      if(s.toString().equals("SERVICE")){
+      if(testeee == "SERVICE"){
+          
+      }
+      if(testeee == "EMPLOYE"){
           // RETOURNER ICI UN INT/ OU AUTRE A VOIR
       }
-      if(s.toString().equals("EMPLOYE")){
+      if(testeee == "DOCTEUR"){
           // RETOURNER ICI UN INT/ OU AUTRE A VOIR
       }
-      if(s.toString().equals("DOCTEUR")){
+      if(testeee == "INFIRMIER"){
           // RETOURNER ICI UN INT/ OU AUTRE A VOIR
       }
-      if(s.toString().equals("INFIRMIER")){
+      if(testeee == "MALADE"){
           // RETOURNER ICI UN INT/ OU AUTRE A VOIR
       }
-      if(s.toString().equals("MALADE")){
-          // RETOURNER ICI UN INT/ OU AUTRE A VOIR
-      }
-      if(s.toString().equals("HOSPITALISATION")){
+      if(testeee == "HOSPITALISATION"){
           
       }// RETOURNER ICI UN INT/ OU AUTRE A VOIR
-      if(s.toString().equals("SOIGNE")){
+      if(testeee == "SOIGNE"){
           // RETOURNER ICI UN INT/ OU AUTRE A VOIR
       }
-      if(s.toString().equals("CHAMBRE")){
+      if(testeee == "CHAMBRE"){
           // RETOURNER ICI UN INT/ OU AUTRE A VOIR
       }
       
@@ -299,28 +300,40 @@ public class Mrecherche extends javax.swing.JFrame {
     private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
         
         /// REQUETE SPECIFIQUE 
-        jComboBox2.addItemListener((ItemListener) this);
-      String s = String.valueOf(jComboBox2.getSelectedItem());
+        JComboBox testeez = (JComboBox)evt.getSource();
+      String testeee = (String)testeez.getSelectedItem();
+      System.out.println(testeee);
       // LES TABLES :"NOMBRE D'HOSPITALISATION PAR SERVICE", "NOMBRE DE DOCTEURS", "NOMBRE INFIRMIERS", "NOMBRE DE MALADES", "NOMBRE DE DOCTEURS PAR SPECIALITE", "NOMBRE D'INFIRMIERS PAR SERVICE"
-      if(s.toString().equals("NOMBRE D'HOSPITALISATION PAR SERVICE")){
-          // RETOURNER ICI UN INT/ OU AUTRE A VOIR
-      }
-      if(s.toString().equals("NOMBRE DE DOCTEURS")){
-          // RETOURNER ICI UN INT/ OU AUTRE A VOIR
-      }
-      if(s.toString().equals("NOMBRE INFIRMIERS")){
-          // RETOURNER ICI UN INT/ OU AUTRE A VOIR
-      }
-      if(s.toString().equals("NOMBRE DE MALADES")){
-          // RETOURNER ICI UN INT/ OU AUTRE A VOIR
-      }
-      if(s.toString().equals("NOMBRE DE DOCTEURS PAR SPECIALITE")){
-          // RETOURNER ICI UN INT/ OU AUTRE A VOIR
-      }
-      if(s.toString().equals("NOMBRE D'INFIRMIERS PAR SERVICE")){
+      if(testeee == "Malades à la mutuelle MAAF"){
           
       }
-        
+      if(testeee == "Infirmier en Nuit"){
+          
+      }
+      if(testeee == "Informations Service et Directeur"){
+          
+      }
+      if(testeee == "Lit occupé du Batiment B"){
+          
+      }
+      if(testeee == "Salaire moyen des infirmiers par service"){
+          
+      }
+      if(testeee == "Nombre moyen de lit dans le batiment A"){
+          
+      }
+      if(testeee == "Malades soignés par plus de trois médecins"){
+          
+      }
+      if(testeee == "Rapport Infirmier / Malades"){
+          
+      }
+      if(testeee == "Docteur avec malade hospitalisé"){
+          
+      }
+      if(testeee == "Docteur sans malade hospitalisé"){
+          
+      }
     }//GEN-LAST:event_jComboBox2ActionPerformed
 
     /**

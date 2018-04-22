@@ -25,6 +25,35 @@ public class Recherche {
         affiche = new Affichage_recherche();
     }
     
+    public void rechercheTable(int numero) throws SQLException {
+        switch(numero) {
+            case 1 :
+                    this.aService();
+                    break;
+                case 2 :
+                    this.aChambre();
+                    break;
+                case 3 :
+                    this.aEmploye();
+                    break;
+                case 4 :
+                    this.aDocteur();
+                    break;
+                case 5 :
+                    this.aInfirmier();
+                    break;
+                case 6 :
+                    this.aMalade();
+                    break;
+                case 7 :
+                    this.aHospitalisation();
+                    break;
+                case 8 :
+                    this.aSoigne();
+                    break;
+        }
+    }
+    
     public void rechercheRQ(int numero) throws SQLException {
         switch (numero) {
                 case 1 :
@@ -104,13 +133,29 @@ public class Recherche {
     
     public void requete7() throws SQLException {
         
-        recup = connectLocal.remplirChampsRequete("");
+        recup = connectLocal.remplirChampsRequete("SELECT DISTINCT malade.nom,malade.prenom, COUNT(DISTINCT soigne.no_docteur),COUNT(DISTINCT docteur.specialite)\n" +
+"FROM soigne,malade,docteur\n" +
+"WHERE no_malade IN\n" +
+"    (     SELECT no_malade\n" +
+"          FROM soigne\n" +
+"          GROUP BY no_malade\n" +
+"          HAVING COUNT(no_docteur) > 3\n" +
+"    )\n" +
+"AND malade.numero = soigne.no_malade\n" +
+"AND soigne.no_docteur = docteur.numero\n" +
+"GROUP BY malade.nom\n" +
+"ORDER BY malade.nom");
         System.out.println(recup);
     }
     
     public void requete8() throws SQLException {
     
-        recup = connectLocal.remplirChampsRequete("");
+        recup = connectLocal.remplirChampsRequete("SELECT service.nom, COUNT(DISTINCT infirmier.numero)/COUNT(DISTINCT hospitalisation.no_malade)\n" +
+"FROM service,hospitalisation,infirmier\n" +
+"WHERE service.code = hospitalisation.code_service \n" +
+"AND service.code = infirmier.code_service \n" +
+"GROUP BY service.nom\n" +
+"ORDER BY service.nom");
         System.out.println(recup);
     }
     
@@ -134,4 +179,46 @@ public class Recherche {
         recup = connectLocal.remplirChampsRequete("SELECT employe.prenom,employe.nom FROM employe,docteur WHERE employe.numero NOT IN(SELECT soigne.no_docteur FROM soigne,hospitalisation WHERE soigne.no_malade = hospitalisation.no_malade GROUP BY soigne.no_docteur) AND employe.numero = docteur.numero ORDER BY employe.nom");
         System.out.println(recup);
     }
+
+    public void aService() throws SQLException {
+        recup = connectLocal.remplirChampsRequete("SELECT * FROM service;");
+         System.out.println(recup);
+        
+    }
+    public void aChambre() throws SQLException {
+        recup = connectLocal.remplirChampsRequete("SELECT * FROM chambre;");
+         System.out.println(recup);
+        
+    }
+    public void aEmploye() throws SQLException {
+        recup = connectLocal.remplirChampsRequete("SELECT * FROM employe;");
+         System.out.println(recup);
+        
+    }
+    public void aDocteur() throws SQLException {
+        recup = connectLocal.remplirChampsRequete("SELECT * FROM docteur;");
+         System.out.println(recup);
+        
+    }
+    public void aInfirmier() throws SQLException {
+        recup = connectLocal.remplirChampsRequete("SELECT * FROM infirmier;");
+         System.out.println(recup);
+        
+    }
+    public void aMalade() throws SQLException {
+        recup = connectLocal.remplirChampsRequete("SELECT * FROM malade;");
+         System.out.println(recup);
+        
+    }
+    public void aHospitalisation() throws SQLException {
+        recup = connectLocal.remplirChampsRequete("SELECT * FROM hospitalisation;");
+         System.out.println(recup);
+        
+    } 
+    public void aSoigne() throws SQLException {
+        recup = connectLocal.remplirChampsRequete("SELECT * FROM soigne;");
+         System.out.println(recup);
+        
+    }
+    
 }

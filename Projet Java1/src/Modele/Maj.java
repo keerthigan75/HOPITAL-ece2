@@ -98,6 +98,7 @@ public class Maj {
     }
     
     public void supprimerObjet(ArrayList list) throws SQLException {
+        System.out.print("requete");
        if (list.get(0) == "Service") { // Pour la table Service
             type = new String[1]; //On definit la taille du tableau de String
             for (int i =1; i<2; i++) { // On convertit tout les elements de l'array en string
@@ -175,6 +176,7 @@ public class Maj {
     @SuppressWarnings("empty-statement")
     public void modifierObjet(ArrayList list) throws SQLException {
         int taille = list.size();
+        System.out.print("requete");
         if (list.get(0) == "Service") { // Pour la table Service
             type = new String[taille]; //On definit la taille du tableau de String
             for (int i =0; i<taille; i++) { // On convertit tout les elements de l'array en string

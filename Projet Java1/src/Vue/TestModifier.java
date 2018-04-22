@@ -1503,6 +1503,7 @@ public class TestModifier extends javax.swing.JFrame {
             requete.add("adresse");
             requete.add(jTextField5.getText());
         }
+        miseajour.modifierObjet(requete);
         requete.clear();
         requete.add("Infirmier");
         requete.add(jTextField1.getText());
@@ -1588,7 +1589,7 @@ public class TestModifier extends javax.swing.JFrame {
     }
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) throws InterruptedException, SQLException{                                         
         // TODO add your handling code here:
-        
+        requete.clear();
         requete.add("Service");
         requete.add(jTextField36.getText());
         
@@ -1616,7 +1617,7 @@ public class TestModifier extends javax.swing.JFrame {
         requete.add("Employe");
         requete.add(jTextField17.getText());
         
-        if(jTextField18.getText()!="")
+        if(!"".equals(jTextField18.getText()))
         {
             requete.add("nom");
             requete.add(jTextField18.getText());
@@ -1636,6 +1637,7 @@ public class TestModifier extends javax.swing.JFrame {
             requete.add("adresse");
             requete.add(jTextField21.getText());
         }
+        miseajour.modifierObjet(requete);
         requete.clear();
         requete.add("Docteur");
         requete.add(jTextField17.getText());

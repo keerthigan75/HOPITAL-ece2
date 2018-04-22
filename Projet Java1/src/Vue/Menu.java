@@ -235,7 +235,7 @@ public class Menu extends javax.swing.JFrame {
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
        
-      JComboBox teste = (JComboBox)evt.getSource();
+        JComboBox teste = (JComboBox)evt.getSource();
         String testee = (String)teste.getSelectedItem();
         if(testee == "Chambre"){
             if(envoie == "INSERT INTO"){ 
