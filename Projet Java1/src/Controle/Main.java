@@ -5,9 +5,8 @@
  */
 package Controle;
 
-import Modele.Recherche;
-import Modele.Reporting;
-import Vue.NewJFrame;
+
+import Vue.*;
 import java.sql.SQLException;
 /**
  *
@@ -22,9 +21,8 @@ public class Main {
      */
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
         
-        NewJFrame oui = new NewJFrame();
-        
-        oui.setVisible(true);
+        SignIn test = new SignIn();
+        test.setVisible(true);
     }
     
 }

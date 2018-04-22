@@ -3,9 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package hopitalframe;
+package Vue;
 
+import Modele.Reporting;
 import java.awt.event.ItemListener;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JComboBox;
 
 /**
  *
@@ -13,10 +18,14 @@ import java.awt.event.ItemListener;
  */
 public class MReporting extends javax.swing.JFrame {
 
+     private int choixAffiche;
+     private int choixRequete;
+     private Reporting reported;
     /**
      * Creates new form MReporting
      */
-    public MReporting() {
+    public MReporting() throws ClassNotFoundException, SQLException {
+        reported = new Reporting();
         initComponents();
     }
 
@@ -87,7 +96,7 @@ public class MReporting extends javax.swing.JFrame {
                     .addContainerGap(245, Short.MAX_VALUE)))
         );
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NOMBRE D'HOSPITALISATION PAR SERVICE", "NOMBRE DE DOCTEURS", "NOMBRE INFIRMIERS", "NOMBRE DE MALADES", "NOMBRE DE DOCTEURS PAR SPECIALITE", "NOMBRE D'INFIRMIERS PAR SERVICE" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NOMBRE D'HOSPITALISATION PAR SERVICE", "NOMBRE DE DOCTEURS INFIRMIERS MALADES", "NOMBRE DE DOCTEURS PAR SPECIALITE", "NOMBRE D'INFIRMIERS PAR SERVICE" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
@@ -215,7 +224,38 @@ public class MReporting extends javax.swing.JFrame {
 /// BOUTON RETOUR
     private void button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button3ActionPerformed
         // TODO add your handling code here:
-        
+        if(choixRequete==1)
+        {
+            try {
+                reported.hopitalise_service(choixAffiche);
+            } catch (SQLException ex) {
+                Logger.getLogger(MReporting.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        else if(choixRequete==2)
+        {
+            try {
+                reported.effectif_malade(choixAffiche);
+            } catch (SQLException ex) {
+                Logger.getLogger(MReporting.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        else if(choixRequete==3)
+        {
+            try {
+                reported.infirmier_service(choixAffiche);
+            } catch (SQLException ex) {
+                Logger.getLogger(MReporting.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        else if(choixRequete==4)
+        {
+            try {
+                reported.specialite_docteur(choixAffiche);
+            } catch (SQLException ex) {
+                Logger.getLogger(MReporting.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
         
       /// CETTE FONCTION RECOIT LE INT DE jRadioButton1ActionPerformed, jRadioButton2ActionPerforme et le int je JcomBox1  et affiche graphes
     }//GEN-LAST:event_button3ActionPerformed
@@ -225,6 +265,7 @@ public class MReporting extends javax.swing.JFrame {
         String bg = evt.getActionCommand();
         if (bg.equals("Camembert")){
        /// ON OUVRE LES FENETRES camembert
+       choixAffiche = 1;
     
     }
     }//GEN-LAST:event_jRadioButton1ActionPerformed
@@ -234,6 +275,7 @@ public class MReporting extends javax.swing.JFrame {
         String bg = evt.getActionCommand();
         if (bg.equals("Histogramme")){
        /// ON OUVRE LES FENETRES histo
+       choixAffiche = 2;
     
     }
         
@@ -243,26 +285,23 @@ public class MReporting extends javax.swing.JFrame {
         
         /// AFFICHER TOUTE LA TABLE
         
-        jComboBox1.addItemListener((ItemListener) this);
-      String s = String.valueOf(jComboBox1.getSelectedItem());
-      // LES TABLES :"NOMBRE D'HOSPITALISATION PAR SERVICE", "NOMBRE DE DOCTEURS", "NOMBRE INFIRMIERS", "NOMBRE DE MALADES", "NOMBRE DE DOCTEURS PAR SPECIALITE", "NOMBRE D'INFIRMIERS PAR SERVICE"
-      if(s.toString().equals("NOMBRE D'HOSPITALISATION PAR SERVICE")){
+      JComboBox testeez = (JComboBox)evt.getSource();
+      String testeee = (String)testeez.getSelectedItem();
+      System.out.println(testeee);
+      if(testeee == "NOMBRE D'HOSPITALISATION PAR SERVICE"){
           // RETOURNER ICI UN INT/ OU AUTRE A VOIR
+          choixRequete = 1;
       }
-      if(s.toString().equals("NOMBRE DE DOCTEURS")){
+      if(testeee == "NOMBRE DE DOCTEURS INFIRMIERS MALADES"){
           // RETOURNER ICI UN INT/ OU AUTRE A VOIR
+          choixRequete = 2;
       }
-      if(s.toString().equals("NOMBRE INFIRMIERS")){
+      if(testeee == "NOMBRE DE DOCTEURS PAR SPECIALITE"){
           // RETOURNER ICI UN INT/ OU AUTRE A VOIR
+          choixRequete = 3;
       }
-      if(s.toString().equals("NOMBRE DE MALADES")){
-          // RETOURNER ICI UN INT/ OU AUTRE A VOIR
-      }
-      if(s.toString().equals("NOMBRE DE DOCTEURS PAR SPECIALITE")){
-          // RETOURNER ICI UN INT/ OU AUTRE A VOIR
-      }
-      if(s.toString().equals("NOMBRE D'INFIRMIERS PAR SERVICE")){
-          
+      if(testeee == "NOMBRE D'INFIRMIERS PAR SERVICE"){
+          choixRequete = 4;
       }
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
@@ -291,6 +330,8 @@ public class MReporting extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(MReporting.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+
         //</editor-fold>
 
         /* Create and display the form */

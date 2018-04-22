@@ -344,8 +344,8 @@ public class TestAjouter extends javax.swing.JFrame {
         });
         
         
-        jLabel3.setText("numero");
-        jLabel6.setText("codeService");
+        jLabel3.setText("codeService");
+        jLabel6.setText("numero");
         jLabel7.setText("surveillant");
         jLabel4.setText("nb_lits");
 

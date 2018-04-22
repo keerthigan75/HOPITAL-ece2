@@ -5,26 +5,35 @@
  */
 package Vue;
 
+import java.awt.event.ItemListener;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import javax.swing.JComboBox;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JComboBox;
+
 /**
  *
- * @author Thomas
+ * @author Keerthigan
  */
-public class NewJFrame extends javax.swing.JFrame {
-    String envoie="";
-    String envoieTable="";
-
+public class Menu extends javax.swing.JFrame {
+    private String envoie;
+    private int choixx;
+    TestSupprimer supp = null;
+    TestModifier modi = null;
+    TestAjouter ajout = null;
+    
     /**
-     * Creates new form NewJFrame
+     * Creates new form Menu
      */
-    public NewJFrame() {
+    public Menu() {
         initComponents();
     }
-
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -34,207 +43,207 @@ public class NewJFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
-        buttonGroup2 = new javax.swing.ButtonGroup();
-        jFrame1 = new javax.swing.JFrame();
-        jFrame2 = new javax.swing.JFrame();
-        jPanel5 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jLabel2 = new javax.swing.JLabel();
+        groupButton = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-
-        javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
-        jFrame1.getContentPane().setLayout(jFrame1Layout);
-        jFrame1Layout.setHorizontalGroup(
-            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        jFrame1Layout.setVerticalGroup(
-            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jFrame2Layout = new javax.swing.GroupLayout(jFrame2.getContentPane());
-        jFrame2.getContentPane().setLayout(jFrame2Layout);
-        jFrame2Layout.setHorizontalGroup(
-            jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        jFrame2Layout.setVerticalGroup(
-            jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        jLabel1 = new javax.swing.JLabel();
+        supprimer = new javax.swing.JRadioButton();
+        ajouter = new javax.swing.JRadioButton();
+        modifier = new javax.swing.JRadioButton();
+        jLabel2 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        button3 = new java.awt.Button();
+        button4 = new java.awt.Button();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel5.setBackground(new java.awt.Color(176, 149, 167));
-        jPanel5.setForeground(new java.awt.Color(56, 69, 67));
+        jPanel1.setBackground(new java.awt.Color(49, 27, 12));
 
-        jLabel1.setText("                          Mise à jour");
+        jLabel1.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Menu d'accueil");
 
-        jRadioButton1.setBackground(new java.awt.Color(176, 149, 167));
-        jRadioButton1.setText("Modifier");
-        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+        supprimer.setBackground(new java.awt.Color(49, 27, 12));
+        groupButton.add(supprimer);
+        supprimer.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        supprimer.setForeground(new java.awt.Color(255, 255, 255));
+        supprimer.setText("Supprimer dans une table");
+        supprimer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton1ActionPerformed(evt);
+                supprimerActionPerformed(evt);
             }
         });
 
-        jRadioButton2.setBackground(new java.awt.Color(176, 149, 167));
-        jRadioButton2.setText("Ajouter");
-        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+        ajouter.setBackground(new java.awt.Color(49, 27, 12));
+        groupButton.add(ajouter);
+        ajouter.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        ajouter.setForeground(new java.awt.Color(255, 255, 255));
+        ajouter.setText("Ajouter dans une table");
+        ajouter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton2ActionPerformed(evt);
+                ajouterActionPerformed(evt);
             }
         });
 
-        jRadioButton3.setBackground(new java.awt.Color(176, 149, 167));
-        jRadioButton3.setText("Supprimer");
-        jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
+        modifier.setBackground(new java.awt.Color(49, 27, 12));
+        groupButton.add(modifier);
+        modifier.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        modifier.setForeground(new java.awt.Color(255, 255, 255));
+        modifier.setText("Modifier dans une table");
+        modifier.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton3ActionPerformed(evt);
+                modifierActionPerformed(evt);
             }
         });
 
-        jComboBox1.setBackground(new java.awt.Color(176, 149, 167));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Chambre", "Docteur", "Employe", "Hospitalisation", "Infirmier", "Malade", "Service", "Soigne" }));
+        jLabel2.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Table :");
+
+        jComboBox1.setBackground(new java.awt.Color(255, 102, 51));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Service", "Chambre", "Employe", "Docteur", "Infirmier", "Malade", "Hospitalisation", "Soigne" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
             }
         });
 
-        jLabel2.setText("   Que voulez-vous faire ?");
+        button3.setActionCommand("GO1");
+        button3.setBackground(new java.awt.Color(255, 51, 0));
+        button3.setLabel("GO");
+        button3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button3ActionPerformed(evt);
+            }
+        });
 
-        jPanel1.setBackground(new java.awt.Color(176, 149, 167));
+        button4.setActionCommand("GO1");
+        button4.setBackground(new java.awt.Color(255, 51, 0));
+        button4.setLabel("Retour");
+        button4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button4ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 246, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(button4, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(419, 419, 419))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(139, 139, 139)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(modifier, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ajouter, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(supprimer, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(494, 494, 494)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(295, 295, 295)
+                        .addComponent(jLabel2)
+                        .addGap(200, 200, 200)
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(130, 130, 130)
+                        .addComponent(button3, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(157, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 304, Short.MAX_VALUE)
-        );
-
-        jButton1.setBackground(new java.awt.Color(176, 149, 167));
-        jButton1.setText("retour");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jRadioButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jRadioButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jRadioButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(213, 213, 213))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(133, 133, 133))))
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(203, 203, 203)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(265, 265, 265)
-                        .addComponent(jButton1)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(54, 54, 54)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(button3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(74, 74, 74)
+                        .addComponent(ajouter, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jRadioButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jRadioButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jRadioButton3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(44, 44, 44))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)))
-                .addComponent(jButton1)
-                .addGap(27, 27, 27))
+                        .addComponent(modifier, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(supprimer, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(103, 103, 103)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                .addComponent(button4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(54, 54, 54))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
-        // TODO add your handling code here:
-        envoie = "INSERT INTO";
-    }//GEN-LAST:event_jRadioButton2ActionPerformed
-
-    private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
-        // TODO add your handling code here:
+    private void supprimerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_supprimerActionPerformed
+        /// SUPPRIMER DANS UNE TABLE
         envoie = "DELETE";
-        System.out.println("bonjour");
-    }//GEN-LAST:event_jRadioButton3ActionPerformed
-
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
-        // TODO add your handling code here:
+    
+    }//GEN-LAST:event_supprimerActionPerformed
+ 
+    private void ajouterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ajouterActionPerformed
+        // AJOUTER DANS UNE TABLE
+        envoie = "INSERT INTO";
+        String bg = evt.getActionCommand();
+        if (bg.equals("ajouter dans une table")){
+            envoie = "INSERT INTO";
+           
+    
+    }//GEN-LAST:event_ajouterActionPerformed
+    }
+    private void modifierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifierActionPerformed
+        /// MODIFIER
         envoie = "UPDATE";
-    }//GEN-LAST:event_jRadioButton1ActionPerformed
+        String bg = evt.getActionCommand();
+        if (bg.equals("modifier dans une table")){
+       /// RETOURNE UN INT
+    
+    } 
+    }//GEN-LAST:event_modifierActionPerformed
+
+    private void button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button3ActionPerformed
+            if(choixx == 1)
+            {
+                ajout.setVisible(true);
+            }
+            if(choixx == 2)
+            {
+                supp.setVisible(true);
+            }
+            if(choixx == 3)
+            {
+                modi.setVisible(true);
+            }
+    }//GEN-LAST:event_button3ActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
-        /*if(envoie == "UPDATE"){
-                
-        }
-        else{
-            envoie = envoie + evt.getSource();
-        }*/
-        System.out.println(evt.getSource());
-        JComboBox teste = (JComboBox)evt.getSource();
+       
+      JComboBox teste = (JComboBox)evt.getSource();
         String testee = (String)teste.getSelectedItem();
         if(testee == "Chambre"){
-            if(envoie == "INSERT INTO"){
+            if(envoie == "INSERT INTO"){ 
+                choixx=1;
                 System.out.println("bonjour1");
                 envoie = testee; 
                 System.out.println(envoie);
-                TestAjouter ajout = null;
+                
                 try {
                     ajout = new TestAjouter(envoie);
                 } catch (SQLException ex) {
@@ -242,16 +251,16 @@ public class NewJFrame extends javax.swing.JFrame {
                 } catch (ClassNotFoundException ex) {
                     Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                ajout.setVisible(true);
+                
                 
                 //System.out.println("bonjour1");
             }
-            else if(envoie == "UPDATE")
-            {
+            else if(envoie == "UPDATE"){ choixx=3;
+            
                 System.out.println("bonjour non");
                 envoie = testee; 
                 System.out.println(envoie);
-                TestModifier modi = null;
+                
                 try {
                     modi = new TestModifier(envoie);
                 } catch (SQLException ex) {
@@ -259,14 +268,14 @@ public class NewJFrame extends javax.swing.JFrame {
                 } catch (ClassNotFoundException ex) {
                     Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                modi.setVisible(true);
+                
                 
             }
-            else if(envoie == "DELETE"){
+            else if(envoie == "DELETE"){ choixx=2;
                 System.out.println("bonjour1");
                 envoie = testee; 
                 System.out.println(envoie);
-                TestSupprimer supp = null;
+                
                 try {
                     supp = new TestSupprimer(envoie);
                 } catch (SQLException ex) {
@@ -274,7 +283,7 @@ public class NewJFrame extends javax.swing.JFrame {
                 } catch (ClassNotFoundException ex) {
                     Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                supp.setVisible(true);
+                
             }
         }
         
@@ -283,11 +292,11 @@ public class NewJFrame extends javax.swing.JFrame {
         
         else if(testee == "Docteur"){
             System.out.println("bonjour2");
-            if(envoie == "INSERT INTO"){
+            if(envoie == "INSERT INTO"){ choixx=1;
                 System.out.println("bonjour1");
                 envoie = testee; 
                 System.out.println(envoie);
-                TestAjouter ajout = null;
+                
                 try {
                     ajout = new TestAjouter(envoie);
                 } catch (SQLException ex) {
@@ -295,16 +304,16 @@ public class NewJFrame extends javax.swing.JFrame {
                 } catch (ClassNotFoundException ex) {
                     Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                ajout.setVisible(true);
+                
                 
                 //System.out.println("bonjour1");
             }
-            else if(envoie == "UPDATE")
-            {
+            else if(envoie == "UPDATE"){ choixx=3;
+            
                 System.out.println("bonjour 45");
                 envoie = testee; 
                 System.out.println(envoie);
-                TestModifier modi = null;
+                
                 try {
                     modi = new TestModifier(envoie);
                 } catch (SQLException ex) {
@@ -312,15 +321,15 @@ public class NewJFrame extends javax.swing.JFrame {
                 } catch (ClassNotFoundException ex) {
                     Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                modi.setVisible(true);
+                
                 
                 
             }
-            else if(envoie == "DELETE"){
+            else if(envoie == "DELETE"){ choixx=2;
                 System.out.println("bonjour1");
                 envoie = testee; 
                 System.out.println(envoie);
-                TestSupprimer supp = null;
+                
                 try {
                     supp = new TestSupprimer(envoie);
                 } catch (SQLException ex) {
@@ -328,7 +337,7 @@ public class NewJFrame extends javax.swing.JFrame {
                 } catch (ClassNotFoundException ex) {
                     Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                supp.setVisible(true);
+                
             }
             
         }
@@ -338,11 +347,11 @@ public class NewJFrame extends javax.swing.JFrame {
         
         else if(testee == "Employe"){
             System.out.println("bonjour3");
-            if(envoie == "INSERT INTO"){
+            if(envoie == "INSERT INTO"){ choixx=1;
                 System.out.println("bonjour1");
                 envoie = testee; 
                 System.out.println(envoie);
-                TestAjouter ajout = null;
+                
                 try {
                     ajout = new TestAjouter(envoie);
                 } catch (SQLException ex) {
@@ -350,17 +359,17 @@ public class NewJFrame extends javax.swing.JFrame {
                 } catch (ClassNotFoundException ex) {
                     Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                ajout.setVisible(true);
+                
                 
                 //System.out.println("bonjour1");
             }
-            else if(envoie == "UPDATE")
-            {
+            else if(envoie == "UPDATE"){ choixx=3;
+            
                 System.out.println("bonjour non");
                 System.out.println("bonjour non");
                 envoie = testee; 
                 System.out.println(envoie);
-                TestModifier modi = null;
+                
                 try {
                     modi = new TestModifier(envoie);
                 } catch (SQLException ex) {
@@ -368,15 +377,15 @@ public class NewJFrame extends javax.swing.JFrame {
                 } catch (ClassNotFoundException ex) {
                     Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                modi.setVisible(true);
+                
                 
                 
             }
-            else if(envoie == "DELETE"){
+            else if(envoie == "DELETE"){ choixx=2;
                 System.out.println("bonjour1");
                 envoie = testee; 
                 System.out.println(envoie);
-                TestSupprimer supp = null;
+                
                 try {
                     supp = new TestSupprimer(envoie);
                 } catch (SQLException ex) {
@@ -384,16 +393,16 @@ public class NewJFrame extends javax.swing.JFrame {
                 } catch (ClassNotFoundException ex) {
                     Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                supp.setVisible(true);
+                
             }
         }
         else if(testee == "Hospitalisation"){
             System.out.println("bonjour4");
-            if(envoie == "INSERT INTO"){
+            if(envoie == "INSERT INTO"){ choixx=1;
                 System.out.println("bonjour1");
                 envoie = testee; 
                 System.out.println(envoie);
-                TestAjouter ajout = null;
+                
                 try {
                     ajout = new TestAjouter(envoie);
                 } catch (SQLException ex) {
@@ -401,17 +410,17 @@ public class NewJFrame extends javax.swing.JFrame {
                 } catch (ClassNotFoundException ex) {
                     Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                ajout.setVisible(true);
+                
                 
                 //System.out.println("bonjour1");
             }
-            else if(envoie == "UPDATE")
-            {
+            else if(envoie == "UPDATE"){ choixx=3;
+            
                 System.out.println("bonjour non");
                 System.out.println("bonjour non");
                 envoie = testee; 
                 System.out.println(envoie);
-                TestModifier modi = null;
+                
                 try {
                     modi = new TestModifier(envoie);
                 } catch (SQLException ex) {
@@ -419,15 +428,15 @@ public class NewJFrame extends javax.swing.JFrame {
                 } catch (ClassNotFoundException ex) {
                     Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                modi.setVisible(true);
+                
                 
                 
             }
-            else if(envoie == "DELETE"){
+            else if(envoie == "DELETE"){ choixx=2;
                 System.out.println("bonjour1");
                 envoie = testee; 
                 System.out.println(envoie);
-                TestSupprimer supp = null;
+                
                 try {
                     supp = new TestSupprimer(envoie);
                 } catch (SQLException ex) {
@@ -435,18 +444,18 @@ public class NewJFrame extends javax.swing.JFrame {
                 } catch (ClassNotFoundException ex) {
                     Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                supp.setVisible(true);
+                
             }
         }
         
         
         else if(testee == "Infirmier"){
             System.out.println("bonjour5");
-            if(envoie == "INSERT INTO"){
+            if(envoie == "INSERT INTO"){ choixx=1;
                 System.out.println("bonjour1");
                 envoie = testee; 
                 System.out.println(envoie);
-                TestAjouter ajout = null;
+                
                 try {
                     ajout = new TestAjouter(envoie);
                 } catch (SQLException ex) {
@@ -454,16 +463,16 @@ public class NewJFrame extends javax.swing.JFrame {
                 } catch (ClassNotFoundException ex) {
                     Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                ajout.setVisible(true);
+                
                 
                 //System.out.println("bonjour1");
             }
-            else if(envoie == "UPDATE")
-            {
+            else if(envoie == "UPDATE"){ choixx=3;
+            
                 System.out.println("bonjour non");
                 envoie = testee; 
                 System.out.println(envoie);
-                TestModifier modi = null;
+                
                 try {
                     modi = new TestModifier(envoie);
                 } catch (SQLException ex) {
@@ -471,15 +480,15 @@ public class NewJFrame extends javax.swing.JFrame {
                 } catch (ClassNotFoundException ex) {
                     Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                modi.setVisible(true);
+                
                 
                 
             }
-            else if(envoie == "DELETE"){
+            else if(envoie == "DELETE"){ choixx=2;
                 System.out.println("bonjour1");
                 envoie = testee; 
                 System.out.println(envoie);
-                TestSupprimer supp = null;
+                
                 try {
                     supp = new TestSupprimer(envoie);
                 } catch (SQLException ex) {
@@ -487,7 +496,7 @@ public class NewJFrame extends javax.swing.JFrame {
                 } catch (ClassNotFoundException ex) {
                     Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                supp.setVisible(true);
+                
             }
         }
         
@@ -497,11 +506,11 @@ public class NewJFrame extends javax.swing.JFrame {
         
         else if(testee == "Malade"){
             System.out.println("bonjour6");
-            if(envoie == "INSERT INTO"){
+            if(envoie == "INSERT INTO"){ choixx=1;
                 System.out.println("bonjour1");
                 envoie = testee; 
                 System.out.println(envoie);
-                TestAjouter ajout = null;
+                
                 try {
                     ajout = new TestAjouter(envoie);
                 } catch (SQLException ex) {
@@ -509,16 +518,16 @@ public class NewJFrame extends javax.swing.JFrame {
                 } catch (ClassNotFoundException ex) {
                     Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                ajout.setVisible(true);
+                
                 
                 //System.out.println("bonjour1");
             }
-            else if(envoie == "UPDATE")
-            {
+            else if(envoie == "UPDATE"){ choixx=3;
+            
                 System.out.println("bonjour non");
                 envoie = testee; 
                 System.out.println(envoie);
-                TestModifier modi = null;
+                
                 try {
                     modi = new TestModifier(envoie);
                 } catch (SQLException ex) {
@@ -526,15 +535,15 @@ public class NewJFrame extends javax.swing.JFrame {
                 } catch (ClassNotFoundException ex) {
                     Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                modi.setVisible(true);
+                
                 
                 
             }
-            else if(envoie == "DELETE"){
+            else if(envoie == "DELETE"){ choixx=2;
                 System.out.println("bonjour1");
                 envoie = testee; 
                 System.out.println(envoie);
-                TestSupprimer supp = null;
+                
                 try {
                     supp = new TestSupprimer(envoie);
                 } catch (SQLException ex) {
@@ -542,7 +551,7 @@ public class NewJFrame extends javax.swing.JFrame {
                 } catch (ClassNotFoundException ex) {
                     Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                supp.setVisible(true);
+                
             }
         }
         
@@ -551,11 +560,11 @@ public class NewJFrame extends javax.swing.JFrame {
         
         else if(testee == "Service"){
             System.out.println("bonjour7");
-            if(envoie == "INSERT INTO"){
+            if(envoie == "INSERT INTO"){ choixx=1;
                 System.out.println("bonjour1");
                 envoie = testee; 
                 System.out.println(envoie);
-                TestAjouter ajout = null;
+                
                 try {
                     ajout = new TestAjouter(envoie);
                 } catch (SQLException ex) {
@@ -563,16 +572,16 @@ public class NewJFrame extends javax.swing.JFrame {
                 } catch (ClassNotFoundException ex) {
                     Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                ajout.setVisible(true);
+                
                 
                 //System.out.println("bonjour1");
             }
-            else if(envoie == "UPDATE")
-            {
+            else if(envoie == "UPDATE"){ choixx=3;
+            
                 System.out.println("bonjour non");
                 envoie = testee; 
                 System.out.println(envoie);
-                TestModifier modi = null;
+                
                 try {
                     modi = new TestModifier(envoie);
                 } catch (SQLException ex) {
@@ -580,15 +589,15 @@ public class NewJFrame extends javax.swing.JFrame {
                 } catch (ClassNotFoundException ex) {
                     Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                modi.setVisible(true);
+                
                 
                 
             }
-            else if(envoie == "DELETE"){
+            else if(envoie == "DELETE"){ choixx=2;
                 System.out.println("bonjour1");
                 envoie = testee; 
                 System.out.println(envoie);
-                TestSupprimer supp = null;
+                
                 try {
                     supp = new TestSupprimer(envoie);
                 } catch (SQLException ex) {
@@ -596,7 +605,7 @@ public class NewJFrame extends javax.swing.JFrame {
                 } catch (ClassNotFoundException ex) {
                     Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                supp.setVisible(true);
+                
             }
         }
         
@@ -604,11 +613,11 @@ public class NewJFrame extends javax.swing.JFrame {
         
         else if(testee == "Soigne"){
             System.out.println("bonjour8");
-            if(envoie == "INSERT INTO"){
+            if(envoie == "INSERT INTO"){ choixx=1;
                 System.out.println("bonjour1");
                 envoie = testee; 
                 System.out.println(envoie);
-                TestAjouter ajout = null;
+                
                 try {
                     ajout = new TestAjouter(envoie);
                 } catch (SQLException ex) {
@@ -616,16 +625,16 @@ public class NewJFrame extends javax.swing.JFrame {
                 } catch (ClassNotFoundException ex) {
                     Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                ajout.setVisible(true);
+                
                 
                 //System.out.println("bonjour1");
             }
-            else if(envoie == "UPDATE")
-            {
+            else if(envoie == "UPDATE"){ choixx=3;
+            
                 System.out.println("bonjour non");
                 envoie = testee; 
                 System.out.println(envoie);
-                TestModifier modi = null;
+                
                 try {
                     modi = new TestModifier(envoie);
                 } catch (SQLException ex) {
@@ -633,15 +642,15 @@ public class NewJFrame extends javax.swing.JFrame {
                 } catch (ClassNotFoundException ex) {
                     Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                modi.setVisible(true);
+                
                 
                 
             }
-            else if(envoie == "DELETE"){
+            else if(envoie == "DELETE"){ choixx=2;
                 System.out.println("bonjour1");
                 envoie = testee; 
                 System.out.println(envoie);
-                TestSupprimer supp = null;
+                
                 try {
                     supp = new TestSupprimer(envoie);
                 } catch (SQLException ex) {
@@ -649,18 +658,19 @@ public class NewJFrame extends javax.swing.JFrame {
                 } catch (ClassNotFoundException ex) {
                     Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                supp.setVisible(true);
+                
             }
         }
-        
+    
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void button4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button4ActionPerformed
         // TODO add your handling code here:
+        Menu2 testmenu = new Menu2();
+        testmenu.setVisible(true);
         this.dispose();
-
-    }//GEN-LAST:event_jButton1ActionPerformed
-
+    }//GEN-LAST:event_button4ActionPerformed
+ 
     /**
      * @param args the command line arguments
      */
@@ -678,40 +688,32 @@ public class NewJFrame extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
+
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new NewJFrame().setVisible(true);
-            }
-        });
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.ButtonGroup buttonGroup2;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JRadioButton ajouter;
+    private java.awt.Button button3;
+    private java.awt.Button button4;
+    private javax.swing.ButtonGroup groupButton;
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JFrame jFrame1;
-    private javax.swing.JFrame jFrame2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
+    private javax.swing.JRadioButton modifier;
+    private javax.swing.JRadioButton supprimer;
     // End of variables declaration//GEN-END:variables
 }

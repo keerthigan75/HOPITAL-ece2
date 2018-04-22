@@ -1,6 +1,6 @@
 
 
-package hopitalframe;
+package Vue;
 
 import java.util.Scanner;
 
@@ -278,6 +278,7 @@ Menu2 page;
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(SignIn.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

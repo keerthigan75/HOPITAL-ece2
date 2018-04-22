@@ -10,7 +10,8 @@ import javax.swing.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.awt.*;
-
+import Modele.Maj;
+import java.sql.SQLException;
 
 /**
  *
@@ -18,13 +19,15 @@ import java.awt.*;
  */
 public class TestSupprimer extends javax.swing.JFrame {
     ArrayList<String> requete = new ArrayList<String>();
+    Maj miseajoure;
 
     
 
     
 
 
-public TestSupprimer(String testt){
+public TestSupprimer(String testt) throws SQLException, ClassNotFoundException{
+    miseajoure = new Maj();
     requete.add(testt);
         switch(testt){
             case "Chambre":
@@ -94,6 +97,8 @@ private void initComponents() {
                     jButton2ActionPerformed(evt);
                 } catch (InterruptedException ex) {
                     Logger.getLogger(TestSupprimer.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (SQLException ex) {
+                    Logger.getLogger(TestSupprimer.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         });
@@ -161,7 +166,7 @@ private void initComponents2() {
             }
         });
 
-        jLabel2.setText("numero chambre");
+        jLabel2.setText("numero chambre à modifier");
 
         jButton3.setText("Retour");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -181,11 +186,13 @@ private void initComponents2() {
                     jButton4ActionPerformed(evt);
                 } catch (InterruptedException ex) {
                     Logger.getLogger(TestSupprimer.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (SQLException ex) {
+                    Logger.getLogger(TestSupprimer.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         });
 
-        jLabel3.setText("code service");
+        jLabel3.setText("code service à modifier");
 
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -278,6 +285,8 @@ private void initComponents3() {
                     jButton6ActionPerformed(evt);
                 } catch (InterruptedException ex) {
                     Logger.getLogger(TestSupprimer.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (SQLException ex) {
+                    Logger.getLogger(TestSupprimer.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         });
@@ -362,6 +371,8 @@ private void initComponents4() {
                 try {
                     jButton8ActionPerformed(evt);
                 } catch (InterruptedException ex) {
+                    Logger.getLogger(TestSupprimer.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (SQLException ex) {
                     Logger.getLogger(TestSupprimer.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
@@ -448,6 +459,8 @@ private void initComponents5() {
                     jButton10ActionPerformed(evt);
                 } catch (InterruptedException ex) {
                     Logger.getLogger(TestSupprimer.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (SQLException ex) {
+                    Logger.getLogger(TestSupprimer.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         });
@@ -533,6 +546,8 @@ private void initComponents6() {
                     jButton12ActionPerformed(evt);
                 } catch (InterruptedException ex) {
                     Logger.getLogger(TestSupprimer.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (SQLException ex) {
+                    Logger.getLogger(TestSupprimer.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         });
@@ -617,6 +632,8 @@ private void initComponents7() {
                 try {
                     jButton14ActionPerformed(evt);
                 } catch (InterruptedException ex) {
+                    Logger.getLogger(TestSupprimer.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (SQLException ex) {
                     Logger.getLogger(TestSupprimer.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
@@ -704,6 +721,8 @@ private void initComponents8() {
                 try {
                     jButton16ActionPerformed(evt);
                 } catch (InterruptedException ex) {
+                    Logger.getLogger(TestSupprimer.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (SQLException ex) {
                     Logger.getLogger(TestSupprimer.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
@@ -810,12 +829,13 @@ private void initComponents8() {
         // TODO add your handling code here:
         this.dispose();
     }                                        
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) throws InterruptedException{                                         
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) throws InterruptedException, SQLException{                                         
         // TODO add your handling code here:
         
         requete.add(jTextField1.getText());
         //envoyer requete
         
+        miseajoure.supprimerObjet(requete);
         this.dispose();
         
     }
@@ -845,34 +865,35 @@ private void initComponents8() {
         this.dispose();
 
     }    
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) throws InterruptedException{                                         
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) throws InterruptedException, SQLException{                                         
         // TODO add your handling code here:
-        requete.add(jTextField2.getText());
         requete.add(jTextField3.getText());
+        requete.add(jTextField2.getText());
         for(int i=0;i<requete.size();i++)
         {
             System.out.println(requete.get(i));
         }
+        miseajoure.supprimerObjet(requete);
         this.dispose();
     }
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) throws InterruptedException{                                         
         // TODO add your handling code here:
         this.dispose();
     }
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) throws InterruptedException{                                         
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) throws InterruptedException, SQLException{                                         
         // TODO add your handling code here:
          requete.add(jTextField4.getText());
-        
+        miseajoure.supprimerObjet(requete);
         this.dispose();
     }                                        
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) throws InterruptedException{                                         
         // TODO add your handling code here:
         this.dispose();
     }
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) throws InterruptedException{                                         
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) throws InterruptedException, SQLException{                                         
         // TODO add your handling code here:
         requete.add(jTextField5.getText());
-        
+        miseajoure.supprimerObjet(requete);
         this.dispose();
     }                                        
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) throws InterruptedException{                                         
@@ -880,37 +901,41 @@ private void initComponents8() {
         
         this.dispose();
     }
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) throws InterruptedException{                                         
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) throws InterruptedException, SQLException{                                         
         // TODO add your handling code here:
         requete.add(jTextField6.getText());
+        miseajoure.supprimerObjet(requete);
         this.dispose();
     }
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) throws InterruptedException {                                         
         // TODO add your handling code here:
         this.dispose();
     }
-    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) throws InterruptedException {                                         
+    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) throws InterruptedException, SQLException {                                         
         // TODO add your handling code here:
         requete.add(jTextField7.getText());
+        miseajoure.supprimerObjet(requete);
         this.dispose();
     }
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) throws InterruptedException {                                         
         // TODO add your handling code here:
         this.dispose();
     }
-    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) throws InterruptedException {                                         
+    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) throws InterruptedException, SQLException {                                         
         // TODO add your handling code here:
         requete.add(jTextField8.getText());
+        miseajoure.supprimerObjet(requete);
         this.dispose();
     }                                        
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) throws InterruptedException {                                         
         // TODO add your handling code here:
         this.dispose();
     }
-    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) throws InterruptedException {                                         
+    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) throws InterruptedException, SQLException {                                         
         // TODO add your handling code here:
         requete.add(jTextField9.getText());
         requete.add(jTextField10.getText());
+        miseajoure.supprimerObjet(requete);
         this.dispose();
     }
     
