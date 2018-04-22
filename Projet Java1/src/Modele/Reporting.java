@@ -144,7 +144,7 @@ public class Reporting {
         }
         //Affichage Camembert
         if(choixAffiche == 1) {
-            affiche.afficheCamembert("Nombre d'infirmiers par servoce", liste, cpt);
+            affiche.afficheCamembert("Nombre d'infirmiers par service", liste, cpt);
         } //Affichage barres
         else if(choixAffiche == 2) {
             affiche.afficheBarre("Nombre d'infirmiers par service", liste, cpt);

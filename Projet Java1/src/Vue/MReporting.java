@@ -250,7 +250,7 @@ public class MReporting extends javax.swing.JFrame {
         jComboBox1.addItemListener((ItemListener) this);
       String s = String.valueOf(jComboBox1.getSelectedItem());
       // LES TABLES :"NOMBRE D'HOSPITALISATION PAR SERVICE", "NOMBRE DE DOCTEURS", "NOMBRE INFIRMIERS", "NOMBRE DE MALADES", "NOMBRE DE DOCTEURS PAR SPECIALITE", "NOMBRE D'INFIRMIERS PAR SERVICE"
-      System.out.println(s.toString());
+      //System.out.println(s.toString());
       if(s.toString().equals("NOMBRE D'HOSPITALISATION PAR SERVICE")){
           // RETOURNER ICI UN INT/ OU AUTRE A VOIR
       }

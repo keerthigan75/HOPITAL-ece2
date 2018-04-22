@@ -6,6 +6,7 @@
 package Modele;
 
 import Controle.Connexion;
+import Vue.Affichage_recherche;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -15,9 +16,13 @@ import java.util.ArrayList;
  */
 public class Recherche {
     private Connexion connectLocal;
+    private ArrayList recup;
+    private Affichage_recherche affiche;
     
     public Recherche() throws SQLException, ClassNotFoundException {
+        recup = new ArrayList();
         connectLocal = new Connexion("hopital", "root", "");
+        affiche = new Affichage_recherche();
     }
     
     public void rechercheRQ(int numero) throws SQLException {
@@ -54,59 +59,63 @@ public class Recherche {
                     break;
                     
         }
+        
+        affiche.affichage_recherche(recup);
+        
+        
                     
     }
     
     public void requete1() throws SQLException {
-        ArrayList recup = new ArrayList();
+        
         recup = connectLocal.remplirChampsRequete("SELECT nom, prenom FROM malade WHERE mutuelle='MAAF';");
          System.out.println(recup);
     }
     
     public void requete2() throws SQLException {
-        ArrayList recup = new ArrayList();
+       
         recup = connectLocal.remplirChampsRequete("SELECT nom, prenom FROM employe,infirmier WHERE infirmier.numero = employe.numero AND infirmier.rotation='NUIT'");
         System.out.println(recup);
     }
 
     public void requete3() throws SQLException {
-        ArrayList recup = new ArrayList();
+       
         recup = connectLocal.remplirChampsRequete("SELECT service.nom,service.batiment,employe.prenom,employe.nom,docteur.specialite FROM service,docteur,employe WHERE service.directeur = employe.numero AND docteur.numero=service.directeur;");
         System.out.println(recup);
     }
     
     public void requete4() throws SQLException {
-        ArrayList recup = new ArrayList();
+        
         recup = connectLocal.remplirChampsRequete("SELECT code_service, AVG(nb_lits) FROM chambre GROUP BY code_service;");
         System.out.println(recup);
     }
     
     public void requete5() throws SQLException {
-        ArrayList recup = new ArrayList();
+     
         recup = connectLocal.remplirChampsRequete("SELECT code_service ,AVG(salaire) FROM infirmier GROUP BY code_service ;");
         System.out.println(recup);
     }
     
     public void requete6() throws SQLException {
-        ArrayList recup = new ArrayList();
+     
         recup = connectLocal.remplirChampsRequete("SELECT code_service, AVG(nb_lits),batiment  FROM service,chambre WHERE batiment='A' GROUP BY code_service");
         System.out.println(recup);
     }
     
     public void requete7() throws SQLException {
-        ArrayList recup = new ArrayList();
+        
         recup = connectLocal.remplirChampsRequete("");
         System.out.println(recup);
     }
     
     public void requete8() throws SQLException {
-        ArrayList recup = new ArrayList();
+    
         recup = connectLocal.remplirChampsRequete("");
         System.out.println(recup);
     }
     
     public void requete9() throws SQLException {
-        ArrayList recup = new ArrayList();
+      
         recup = connectLocal.remplirChampsRequete("SELECT employe.prenom,employe.nom\n" +
 "FROM employe\n" +
 "WHERE employe.numero IN\n" +
@@ -121,7 +130,7 @@ public class Recherche {
     }
     
     public void requete10() throws SQLException {
-        ArrayList recup = new ArrayList();
+       
         recup = connectLocal.remplirChampsRequete("SELECT employe.prenom,employe.nom FROM employe,docteur WHERE employe.numero NOT IN(SELECT soigne.no_docteur FROM soigne,hospitalisation WHERE soigne.no_malade = hospitalisation.no_malade GROUP BY soigne.no_docteur) AND employe.numero = docteur.numero ORDER BY employe.nom");
         System.out.println(recup);
     }
